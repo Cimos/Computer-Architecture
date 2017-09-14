@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lab2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab2|lpm_add_sub0:inst6|lpm_add_sub:lpm_add_sub_component" CBX_FILE_NAME="add_sub_fph.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab2|lpm_mux0:inst|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_m4e.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

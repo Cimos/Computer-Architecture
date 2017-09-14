@@ -1,0 +1,848 @@
+Analysis & Synthesis report for Lab_3
+Thu Sep 07 10:02:52 2017
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Parameter Settings for User Entity Instance: lpm_mux2:inst9|LPM_MUX:lpm_mux_component
+  9. Parameter Settings for User Entity Instance: lpm_add_sub0:ALU|lpm_add_sub:lpm_add_sub_component
+ 10. Parameter Settings for User Entity Instance: lpm_ff2:inst3|lpm_ff:lpm_ff_component
+ 11. Parameter Settings for User Entity Instance: lpm_mux1:inst|LPM_MUX:lpm_mux_component
+ 12. Parameter Settings for User Entity Instance: lpm_ff0:reg_sp|lpm_ff:lpm_ff_component
+ 13. Parameter Settings for User Entity Instance: lpm_decode0:inst1|lpm_decode:lpm_decode_component
+ 14. Parameter Settings for User Entity Instance: lpm_mux3:inst28|LPM_MUX:lpm_mux_component
+ 15. Parameter Settings for User Entity Instance: lpm_ff0:reg_y|lpm_ff:lpm_ff_component
+ 16. Parameter Settings for User Entity Instance: lpm_ff0:reg_x|lpm_ff:lpm_ff_component
+ 17. Parameter Settings for User Entity Instance: lpm_ff0:reg_b|lpm_ff:lpm_ff_component
+ 18. Parameter Settings for User Entity Instance: lpm_ff0:reg_a|lpm_ff:lpm_ff_component
+ 19. Parameter Settings for User Entity Instance: lpm_ff2:inst4|lpm_ff:lpm_ff_component
+ 20. Parameter Settings for User Entity Instance: lpm_add_sub2:inst5|lpm_add_sub:lpm_add_sub_component
+ 21. Parameter Settings for User Entity Instance: lpm_and0:inst6|LPM_AND:lpm_and_component
+ 22. Parameter Settings for User Entity Instance: lpm_or0:inst7|LPM_OR:lpm_or_component
+ 23. Parameter Settings for User Entity Instance: lpm_xor0:inst8|LPM_XOR:lpm_xor_component
+ 24. Parameter Settings for User Entity Instance: lpm_decode1:inst2|lpm_decode:lpm_decode_component
+ 25. Parameter Settings for User Entity Instance: lpm_ff0:reg_pc|lpm_ff:lpm_ff_component
+ 26. Parameter Settings for User Entity Instance: lpm_add_sub1:plus_one|lpm_add_sub:lpm_add_sub_component
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Sep 07 10:02:52 2017        ;
+; Quartus II Version                 ; 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition ;
+; Revision Name                      ; Lab_3                                        ;
+; Top-level Entity Name              ; Lab_3                                        ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 135                                          ;
+;     Total combinational functions  ; 95                                           ;
+;     Dedicated logic registers      ; 64                                           ;
+; Total registers                    ; 64                                           ;
+; Total pins                         ; 38                                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                        ; Lab_3              ; Lab_3              ;
+; Family name                                                  ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Timing-Driven Synthesis                                      ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                  ; Off                ; Off                ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+
+; Lab_3.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/Lab_3.bdf           ;
+; lpm_add_sub0.vhd                 ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_add_sub0.vhd    ;
+; lpm_add_sub1.vhd                 ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_add_sub1.vhd    ;
+; lpm_ff0.vhd                      ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_ff0.vhd         ;
+; lpm_ff2.vhd                      ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_ff2.vhd         ;
+; lpm_add_sub2.vhd                 ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_add_sub2.vhd    ;
+; lpm_and0.vhd                     ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_and0.vhd        ;
+; lpm_or0.vhd                      ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_or0.vhd         ;
+; lpm_xor0.vhd                     ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_xor0.vhd        ;
+; lpm_mux2.vhd                     ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_mux2.vhd        ;
+; lpm_decode1.vhd                  ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_decode1.vhd     ;
+; lpm_mux3.vhd                     ; yes             ; User Wizard-Generated File         ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_mux3.vhd        ;
+; LPM_MUX.tdf                      ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/LPM_MUX.tdf             ;
+; aglobal90.inc                    ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/aglobal90.inc           ;
+; muxlut.inc                       ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/muxlut.inc              ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/bypassff.inc            ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/altshift.inc            ;
+; db/mux_c3e.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/db/mux_c3e.tdf      ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/addcore.inc             ;
+; look_add.inc                     ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/look_add.inc            ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;
+; alt_mercury_add_sub.inc          ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/alt_mercury_add_sub.inc ;
+; db/add_sub_rvi.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/db/add_sub_rvi.tdf  ;
+; lpm_ff.tdf                       ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/lpm_ff.tdf              ;
+; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/lpm_constant.inc        ;
+; lpm_mux1.vhd                     ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_mux1.vhd        ;
+; lpm_decode0.vhd                  ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/lpm_decode0.vhd     ;
+; lpm_decode.tdf                   ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/lpm_decode.tdf          ;
+; declut.inc                       ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/declut.inc              ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/lpm_compare.inc         ;
+; db/decode_s6f.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/db/decode_s6f.tdf   ;
+; db/mux_73e.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/db/mux_73e.tdf      ;
+; db/add_sub_s0j.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/db/add_sub_s0j.tdf  ;
+; LPM_AND.tdf                      ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/LPM_AND.tdf             ;
+; LPM_OR.tdf                       ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/LPM_OR.tdf              ;
+; LPM_XOR.tdf                      ; yes             ; Megafunction                       ; c:/quartus iii/quartus/libraries/megafunctions/LPM_XOR.tdf             ;
+; db/add_sub_0oh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/Cimos/Desktop/Uni Subjects/Embedded/Lab_3/db/add_sub_0oh.tdf  ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 135   ;
+;                                             ;       ;
+; Total combinational functions               ; 95    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 43    ;
+;     -- 3 input functions                    ; 40    ;
+;     -- <=2 input functions                  ; 12    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 73    ;
+;     -- arithmetic mode                      ; 22    ;
+;                                             ;       ;
+; Total registers                             ; 64    ;
+;     -- Dedicated logic registers            ; 64    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 38    ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 64    ;
+; Total fan-out                               ; 522   ;
+; Average fan-out                             ; 2.65  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+--------------+
+; |Lab_3                                    ; 95 (6)            ; 64 (0)       ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |Lab_3                                                                                 ; work         ;
+;    |lpm_add_sub0:ALU|                     ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_add_sub0:ALU                                                                ; work         ;
+;       |lpm_add_sub:lpm_add_sub_component| ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_add_sub0:ALU|lpm_add_sub:lpm_add_sub_component                              ; work         ;
+;          |add_sub_rvi:auto_generated|     ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_add_sub0:ALU|lpm_add_sub:lpm_add_sub_component|add_sub_rvi:auto_generated   ; work         ;
+;    |lpm_add_sub2:inst5|                   ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_add_sub2:inst5                                                              ; work         ;
+;       |lpm_add_sub:lpm_add_sub_component| ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_add_sub2:inst5|lpm_add_sub:lpm_add_sub_component                            ; work         ;
+;          |add_sub_s0j:auto_generated|     ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_add_sub2:inst5|lpm_add_sub:lpm_add_sub_component|add_sub_s0j:auto_generated ; work         ;
+;    |lpm_decode0:inst1|                    ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_decode0:inst1                                                               ; work         ;
+;       |lpm_decode:lpm_decode_component|   ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_decode0:inst1|lpm_decode:lpm_decode_component                               ; work         ;
+;          |decode_s6f:auto_generated|      ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_decode0:inst1|lpm_decode:lpm_decode_component|decode_s6f:auto_generated     ; work         ;
+;    |lpm_ff0:reg_a|                        ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_a                                                                   ; work         ;
+;       |lpm_ff:lpm_ff_component|           ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_a|lpm_ff:lpm_ff_component                                           ; work         ;
+;    |lpm_ff0:reg_b|                        ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_b                                                                   ; work         ;
+;       |lpm_ff:lpm_ff_component|           ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_b|lpm_ff:lpm_ff_component                                           ; work         ;
+;    |lpm_ff0:reg_pc|                       ; 8 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_pc                                                                  ; work         ;
+;       |lpm_ff:lpm_ff_component|           ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_pc|lpm_ff:lpm_ff_component                                          ; work         ;
+;    |lpm_ff0:reg_sp|                       ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_sp                                                                  ; work         ;
+;       |lpm_ff:lpm_ff_component|           ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_sp|lpm_ff:lpm_ff_component                                          ; work         ;
+;    |lpm_ff0:reg_x|                        ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_x                                                                   ; work         ;
+;       |lpm_ff:lpm_ff_component|           ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_x|lpm_ff:lpm_ff_component                                           ; work         ;
+;    |lpm_ff0:reg_y|                        ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_y                                                                   ; work         ;
+;       |lpm_ff:lpm_ff_component|           ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff0:reg_y|lpm_ff:lpm_ff_component                                           ; work         ;
+;    |lpm_ff2:inst3|                        ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff2:inst3                                                                   ; work         ;
+;       |lpm_ff:lpm_ff_component|           ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff2:inst3|lpm_ff:lpm_ff_component                                           ; work         ;
+;    |lpm_ff2:inst4|                        ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff2:inst4                                                                   ; work         ;
+;       |lpm_ff:lpm_ff_component|           ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_ff2:inst4|lpm_ff:lpm_ff_component                                           ; work         ;
+;    |lpm_mux1:inst|                        ; 24 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux1:inst                                                                   ; work         ;
+;       |lpm_mux:lpm_mux_component|         ; 24 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux1:inst|lpm_mux:lpm_mux_component                                         ; work         ;
+;          |mux_c3e:auto_generated|         ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux1:inst|lpm_mux:lpm_mux_component|mux_c3e:auto_generated                  ; work         ;
+;    |lpm_mux2:inst9|                       ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux2:inst9                                                                  ; work         ;
+;       |lpm_mux:lpm_mux_component|         ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux2:inst9|lpm_mux:lpm_mux_component                                        ; work         ;
+;          |mux_c3e:auto_generated|         ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux2:inst9|lpm_mux:lpm_mux_component|mux_c3e:auto_generated                 ; work         ;
+;    |lpm_mux3:inst28|                      ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux3:inst28                                                                 ; work         ;
+;       |lpm_mux:lpm_mux_component|         ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux3:inst28|lpm_mux:lpm_mux_component                                       ; work         ;
+;          |mux_73e:auto_generated|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab_3|lpm_mux3:inst28|lpm_mux:lpm_mux_component|mux_73e:auto_generated                ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_mux2:inst9|LPM_MUX:lpm_mux_component ;
++------------------------+------------+-------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                            ;
++------------------------+------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                  ;
+; LPM_WIDTH              ; 8          ; Signed Integer                                  ;
+; LPM_SIZE               ; 5          ; Signed Integer                                  ;
+; LPM_WIDTHS             ; 3          ; Signed Integer                                  ;
+; LPM_PIPELINE           ; 0          ; Signed Integer                                  ;
+; CBXI_PARAMETER         ; mux_c3e    ; Untyped                                         ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                         ;
++------------------------+------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_add_sub0:ALU|lpm_add_sub:lpm_add_sub_component ;
++------------------------+-------------+----------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                     ;
++------------------------+-------------+----------------------------------------------------------+
+; LPM_WIDTH              ; 8           ; Signed Integer                                           ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                  ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                                  ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                                                  ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                  ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                  ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                                  ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                  ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                  ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                       ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                  ;
+; USE_WYS                ; OFF         ; Untyped                                                  ;
+; STYLE                  ; FAST        ; Untyped                                                  ;
+; CBXI_PARAMETER         ; add_sub_rvi ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                           ;
++------------------------+-------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ff2:inst3|lpm_ff:lpm_ff_component ;
++------------------------+------------+----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                         ;
++------------------------+------------+----------------------------------------------+
+; LPM_WIDTH              ; 8          ; Signed Integer                               ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_FFTYPE             ; DFF        ; Untyped                                      ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                               ;
++------------------------+------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_mux1:inst|LPM_MUX:lpm_mux_component ;
++------------------------+------------+------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                           ;
++------------------------+------------+------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                 ;
+; LPM_WIDTH              ; 8          ; Signed Integer                                 ;
+; LPM_SIZE               ; 5          ; Signed Integer                                 ;
+; LPM_WIDTHS             ; 3          ; Signed Integer                                 ;
+; LPM_PIPELINE           ; 0          ; Signed Integer                                 ;
+; CBXI_PARAMETER         ; mux_c3e    ; Untyped                                        ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                        ;
++------------------------+------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ff0:reg_sp|lpm_ff:lpm_ff_component ;
++------------------------+------------+-----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                          ;
++------------------------+------------+-----------------------------------------------+
+; LPM_WIDTH              ; 8          ; Signed Integer                                ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                       ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                       ;
+; LPM_FFTYPE             ; DFF        ; Untyped                                       ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                       ;
+; CBXI_PARAMETER         ; NOTHING    ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                ;
++------------------------+------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_decode0:inst1|lpm_decode:lpm_decode_component ;
++------------------------+------------+----------------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                                     ;
++------------------------+------------+----------------------------------------------------------+
+; LPM_WIDTH              ; 3          ; Signed Integer                                           ;
+; LPM_DECODES            ; 8          ; Signed Integer                                           ;
+; LPM_PIPELINE           ; 0          ; Untyped                                                  ;
+; CASCADE_CHAIN          ; MANUAL     ; Untyped                                                  ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                  ;
+; CBXI_PARAMETER         ; decode_s6f ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                           ;
++------------------------+------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_mux3:inst28|LPM_MUX:lpm_mux_component ;
++------------------------+------------+--------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                             ;
++------------------------+------------+--------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                   ;
+; LPM_WIDTH              ; 8          ; Signed Integer                                   ;
+; LPM_SIZE               ; 2          ; Signed Integer                                   ;
+; LPM_WIDTHS             ; 1          ; Signed Integer                                   ;
+; LPM_PIPELINE           ; 0          ; Signed Integer                                   ;
+; CBXI_PARAMETER         ; mux_73e    ; Untyped                                          ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                          ;
++------------------------+------------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ff0:reg_y|lpm_ff:lpm_ff_component ;
++------------------------+------------+----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                         ;
++------------------------+------------+----------------------------------------------+
+; LPM_WIDTH              ; 8          ; Signed Integer                               ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_FFTYPE             ; DFF        ; Untyped                                      ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                               ;
++------------------------+------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ff0:reg_x|lpm_ff:lpm_ff_component ;
++------------------------+------------+----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                         ;
++------------------------+------------+----------------------------------------------+
+; LPM_WIDTH              ; 8          ; Signed Integer                               ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_FFTYPE             ; DFF        ; Untyped                                      ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                               ;
++------------------------+------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ff0:reg_b|lpm_ff:lpm_ff_component ;
++------------------------+------------+----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                         ;
++------------------------+------------+----------------------------------------------+
+; LPM_WIDTH              ; 8          ; Signed Integer                               ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_FFTYPE             ; DFF        ; Untyped                                      ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                               ;
++------------------------+------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ff0:reg_a|lpm_ff:lpm_ff_component ;
++------------------------+------------+----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                         ;
++------------------------+------------+----------------------------------------------+
+; LPM_WIDTH              ; 8          ; Signed Integer                               ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_FFTYPE             ; DFF        ; Untyped                                      ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                               ;
++------------------------+------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ff2:inst4|lpm_ff:lpm_ff_component ;
++------------------------+------------+----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                         ;
++------------------------+------------+----------------------------------------------+
+; LPM_WIDTH              ; 8          ; Signed Integer                               ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                      ;
+; LPM_FFTYPE             ; DFF        ; Untyped                                      ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                               ;
++------------------------+------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_add_sub2:inst5|lpm_add_sub:lpm_add_sub_component ;
++------------------------+-------------+------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                       ;
++------------------------+-------------+------------------------------------------------------------+
+; LPM_WIDTH              ; 8           ; Signed Integer                                             ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                    ;
+; LPM_DIRECTION          ; SUB         ; Untyped                                                    ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                                                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                         ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                    ;
+; USE_WYS                ; OFF         ; Untyped                                                    ;
+; STYLE                  ; FAST        ; Untyped                                                    ;
+; CBXI_PARAMETER         ; add_sub_s0j ; Untyped                                                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                             ;
++------------------------+-------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_and0:inst6|LPM_AND:lpm_and_component ;
++------------------------+------------+-------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                            ;
++------------------------+------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                  ;
+; LPM_WIDTH              ; 8          ; Signed Integer                                  ;
+; LPM_SIZE               ; 2          ; Signed Integer                                  ;
+; CARRY_CHAIN_LENGTH     ; 48         ; CARRY_CHAIN_LENGTH                              ;
+; CARRY_CHAIN            ; MANUAL     ; Untyped                                         ;
+; CASCADE_CHAIN          ; MANUAL     ; Untyped                                         ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                         ;
++------------------------+------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_or0:inst7|LPM_OR:lpm_or_component ;
++------------------------+------------+----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                         ;
++------------------------+------------+----------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                               ;
+; LPM_WIDTH              ; 8          ; Signed Integer                               ;
+; LPM_SIZE               ; 2          ; Signed Integer                               ;
+; CARRY_CHAIN_LENGTH     ; 48         ; CARRY_CHAIN_LENGTH                           ;
+; CARRY_CHAIN            ; MANUAL     ; Untyped                                      ;
+; CASCADE_CHAIN          ; MANUAL     ; Untyped                                      ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                      ;
++------------------------+------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_xor0:inst8|LPM_XOR:lpm_xor_component ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; LPM_WIDTH      ; 8     ; Signed Integer                                               ;
+; LPM_SIZE       ; 2     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_decode1:inst2|lpm_decode:lpm_decode_component ;
++------------------------+------------+----------------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                                     ;
++------------------------+------------+----------------------------------------------------------+
+; LPM_WIDTH              ; 3          ; Signed Integer                                           ;
+; LPM_DECODES            ; 8          ; Signed Integer                                           ;
+; LPM_PIPELINE           ; 0          ; Untyped                                                  ;
+; CASCADE_CHAIN          ; MANUAL     ; Untyped                                                  ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                  ;
+; CBXI_PARAMETER         ; decode_s6f ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                           ;
++------------------------+------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ff0:reg_pc|lpm_ff:lpm_ff_component ;
++------------------------+------------+-----------------------------------------------+
+; Parameter Name         ; Value      ; Type                                          ;
++------------------------+------------+-----------------------------------------------+
+; LPM_WIDTH              ; 8          ; Signed Integer                                ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                       ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                       ;
+; LPM_FFTYPE             ; DFF        ; Untyped                                       ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                       ;
+; CBXI_PARAMETER         ; NOTHING    ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                ;
++------------------------+------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_add_sub1:plus_one|lpm_add_sub:lpm_add_sub_component ;
++------------------------+-------------+---------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                          ;
++------------------------+-------------+---------------------------------------------------------------+
+; LPM_WIDTH              ; 8           ; Signed Integer                                                ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                       ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                                       ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                       ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                       ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                       ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                                       ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                       ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                       ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                            ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                       ;
+; USE_WYS                ; OFF         ; Untyped                                                       ;
+; STYLE                  ; FAST        ; Untyped                                                       ;
+; CBXI_PARAMETER         ; add_sub_0oh ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                ;
++------------------------+-------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Sep 07 10:02:46 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab_3 -c Lab_3
+Info: Found 1 design units, including 1 entities, in source file Lab_3.bdf
+    Info: Found entity 1: Lab_3
+Info: Found 2 design units, including 1 entities, in source file lpm_mux0.vhd
+    Info: Found design unit 1: lpm_mux0-SYN
+    Info: Found entity 1: lpm_mux0
+Info: Found 2 design units, including 1 entities, in source file lpm_add_sub0.vhd
+    Info: Found design unit 1: lpm_add_sub0-SYN
+    Info: Found entity 1: lpm_add_sub0
+Info: Found 2 design units, including 1 entities, in source file lpm_add_sub1.vhd
+    Info: Found design unit 1: lpm_add_sub1-SYN
+    Info: Found entity 1: lpm_add_sub1
+Info: Found 2 design units, including 1 entities, in source file lpm_ff0.vhd
+    Info: Found design unit 1: lpm_ff0-SYN
+    Info: Found entity 1: lpm_ff0
+Info: Found 2 design units, including 1 entities, in source file lpm_shiftreg0.vhd
+    Info: Found design unit 1: lpm_shiftreg0-SYN
+    Info: Found entity 1: lpm_shiftreg0
+Info: Found 2 design units, including 1 entities, in source file lpm_ff1.vhd
+    Info: Found design unit 1: lpm_ff1-SYN
+    Info: Found entity 1: lpm_ff1
+Info: Found 2 design units, including 1 entities, in source file lpm_ff2.vhd
+    Info: Found design unit 1: lpm_ff2-SYN
+    Info: Found entity 1: lpm_ff2
+Info: Found 2 design units, including 1 entities, in source file lpm_add_sub2.vhd
+    Info: Found design unit 1: lpm_add_sub2-SYN
+    Info: Found entity 1: lpm_add_sub2
+Info: Found 2 design units, including 1 entities, in source file lpm_and0.vhd
+    Info: Found design unit 1: lpm_and0-SYN
+    Info: Found entity 1: lpm_and0
+Info: Found 2 design units, including 1 entities, in source file lpm_or0.vhd
+    Info: Found design unit 1: lpm_or0-SYN
+    Info: Found entity 1: lpm_or0
+Info: Found 2 design units, including 1 entities, in source file lpm_xor0.vhd
+    Info: Found design unit 1: lpm_xor0-SYN
+    Info: Found entity 1: lpm_xor0
+Info: Found 2 design units, including 1 entities, in source file lpm_mux2.vhd
+    Info: Found design unit 1: lpm_mux2-SYN
+    Info: Found entity 1: lpm_mux2
+Info: Found 2 design units, including 1 entities, in source file lpm_decode1.vhd
+    Info: Found design unit 1: lpm_decode1-SYN
+    Info: Found entity 1: lpm_decode1
+Info: Found 2 design units, including 1 entities, in source file lpm_mux3.vhd
+    Info: Found design unit 1: lpm_mux3-SYN
+    Info: Found entity 1: lpm_mux3
+Info: Elaborating entity "Lab_3" for the top level hierarchy
+Info: Elaborating entity "lpm_mux2" for hierarchy "lpm_mux2:inst9"
+Info: Elaborating entity "LPM_MUX" for hierarchy "lpm_mux2:inst9|LPM_MUX:lpm_mux_component"
+Info: Elaborated megafunction instantiation "lpm_mux2:inst9|LPM_MUX:lpm_mux_component"
+Info: Instantiated megafunction "lpm_mux2:inst9|LPM_MUX:lpm_mux_component" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_SIZE" = "5"
+    Info: Parameter "LPM_WIDTHS" = "3"
+    Info: Parameter "LPM_PIPELINE" = "0"
+    Info: Parameter "LPM_TYPE" = "LPM_MUX"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/mux_c3e.tdf
+    Info: Found entity 1: mux_c3e
+Info: Elaborating entity "mux_c3e" for hierarchy "lpm_mux2:inst9|LPM_MUX:lpm_mux_component|mux_c3e:auto_generated"
+Info: Elaborating entity "lpm_add_sub0" for hierarchy "lpm_add_sub0:ALU"
+Info: Elaborating entity "lpm_add_sub" for hierarchy "lpm_add_sub0:ALU|lpm_add_sub:lpm_add_sub_component"
+Info: Elaborated megafunction instantiation "lpm_add_sub0:ALU|lpm_add_sub:lpm_add_sub_component"
+Info: Instantiated megafunction "lpm_add_sub0:ALU|lpm_add_sub:lpm_add_sub_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "ADD"
+    Info: Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=NO,CIN_USED=NO"
+    Info: Parameter "lpm_representation" = "UNSIGNED"
+    Info: Parameter "lpm_type" = "LPM_ADD_SUB"
+    Info: Parameter "lpm_width" = "8"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_rvi.tdf
+    Info: Found entity 1: add_sub_rvi
+Info: Elaborating entity "add_sub_rvi" for hierarchy "lpm_add_sub0:ALU|lpm_add_sub:lpm_add_sub_component|add_sub_rvi:auto_generated"
+Info: Elaborating entity "lpm_ff2" for hierarchy "lpm_ff2:inst3"
+Info: Elaborating entity "lpm_ff" for hierarchy "lpm_ff2:inst3|lpm_ff:lpm_ff_component"
+Info: Elaborated megafunction instantiation "lpm_ff2:inst3|lpm_ff:lpm_ff_component"
+Info: Instantiated megafunction "lpm_ff2:inst3|lpm_ff:lpm_ff_component" with the following parameter:
+    Info: Parameter "lpm_fftype" = "DFF"
+    Info: Parameter "lpm_type" = "LPM_FF"
+    Info: Parameter "lpm_width" = "8"
+Warning: Using design file lpm_mux1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: lpm_mux1-SYN
+    Info: Found entity 1: lpm_mux1
+Info: Elaborating entity "lpm_mux1" for hierarchy "lpm_mux1:inst"
+Info: Elaborating entity "lpm_ff0" for hierarchy "lpm_ff0:reg_sp"
+Warning: Using design file lpm_decode0.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: lpm_decode0-SYN
+    Info: Found entity 1: lpm_decode0
+Info: Elaborating entity "lpm_decode0" for hierarchy "lpm_decode0:inst1"
+Info: Elaborating entity "lpm_decode" for hierarchy "lpm_decode0:inst1|lpm_decode:lpm_decode_component"
+Info: Elaborated megafunction instantiation "lpm_decode0:inst1|lpm_decode:lpm_decode_component"
+Info: Instantiated megafunction "lpm_decode0:inst1|lpm_decode:lpm_decode_component" with the following parameter:
+    Info: Parameter "lpm_decodes" = "8"
+    Info: Parameter "lpm_type" = "LPM_DECODE"
+    Info: Parameter "lpm_width" = "3"
+Info: Found 1 design units, including 1 entities, in source file db/decode_s6f.tdf
+    Info: Found entity 1: decode_s6f
+Info: Elaborating entity "decode_s6f" for hierarchy "lpm_decode0:inst1|lpm_decode:lpm_decode_component|decode_s6f:auto_generated"
+Info: Elaborating entity "lpm_mux3" for hierarchy "lpm_mux3:inst28"
+Info: Elaborating entity "LPM_MUX" for hierarchy "lpm_mux3:inst28|LPM_MUX:lpm_mux_component"
+Info: Elaborated megafunction instantiation "lpm_mux3:inst28|LPM_MUX:lpm_mux_component"
+Info: Instantiated megafunction "lpm_mux3:inst28|LPM_MUX:lpm_mux_component" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_SIZE" = "2"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_PIPELINE" = "0"
+    Info: Parameter "LPM_TYPE" = "LPM_MUX"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/mux_73e.tdf
+    Info: Found entity 1: mux_73e
+Info: Elaborating entity "mux_73e" for hierarchy "lpm_mux3:inst28|LPM_MUX:lpm_mux_component|mux_73e:auto_generated"
+Info: Elaborating entity "lpm_add_sub2" for hierarchy "lpm_add_sub2:inst5"
+Info: Elaborating entity "lpm_add_sub" for hierarchy "lpm_add_sub2:inst5|lpm_add_sub:lpm_add_sub_component"
+Info: Elaborated megafunction instantiation "lpm_add_sub2:inst5|lpm_add_sub:lpm_add_sub_component"
+Info: Instantiated megafunction "lpm_add_sub2:inst5|lpm_add_sub:lpm_add_sub_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "SUB"
+    Info: Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=NO,CIN_USED=NO"
+    Info: Parameter "lpm_representation" = "UNSIGNED"
+    Info: Parameter "lpm_type" = "LPM_ADD_SUB"
+    Info: Parameter "lpm_width" = "8"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_s0j.tdf
+    Info: Found entity 1: add_sub_s0j
+Info: Elaborating entity "add_sub_s0j" for hierarchy "lpm_add_sub2:inst5|lpm_add_sub:lpm_add_sub_component|add_sub_s0j:auto_generated"
+Info: Elaborating entity "lpm_and0" for hierarchy "lpm_and0:inst6"
+Info: Elaborating entity "LPM_AND" for hierarchy "lpm_and0:inst6|LPM_AND:lpm_and_component"
+Info: Elaborated megafunction instantiation "lpm_and0:inst6|LPM_AND:lpm_and_component"
+Info: Instantiated megafunction "lpm_and0:inst6|LPM_AND:lpm_and_component" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_SIZE" = "2"
+    Info: Parameter "LPM_TYPE" = "LPM_AND"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "lpm_or0" for hierarchy "lpm_or0:inst7"
+Info: Elaborating entity "LPM_OR" for hierarchy "lpm_or0:inst7|LPM_OR:lpm_or_component"
+Info: Elaborated megafunction instantiation "lpm_or0:inst7|LPM_OR:lpm_or_component"
+Info: Instantiated megafunction "lpm_or0:inst7|LPM_OR:lpm_or_component" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_SIZE" = "2"
+    Info: Parameter "LPM_TYPE" = "LPM_OR"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "lpm_xor0" for hierarchy "lpm_xor0:inst8"
+Info: Elaborating entity "LPM_XOR" for hierarchy "lpm_xor0:inst8|LPM_XOR:lpm_xor_component"
+Info: Elaborated megafunction instantiation "lpm_xor0:inst8|LPM_XOR:lpm_xor_component"
+Info: Instantiated megafunction "lpm_xor0:inst8|LPM_XOR:lpm_xor_component" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_SIZE" = "2"
+    Info: Parameter "LPM_TYPE" = "LPM_XOR"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "lpm_decode1" for hierarchy "lpm_decode1:inst2"
+Info: Elaborating entity "lpm_decode" for hierarchy "lpm_decode1:inst2|lpm_decode:lpm_decode_component"
+Info: Elaborated megafunction instantiation "lpm_decode1:inst2|lpm_decode:lpm_decode_component"
+Info: Instantiated megafunction "lpm_decode1:inst2|lpm_decode:lpm_decode_component" with the following parameter:
+    Info: Parameter "lpm_decodes" = "8"
+    Info: Parameter "lpm_type" = "LPM_DECODE"
+    Info: Parameter "lpm_width" = "3"
+Info: Elaborating entity "lpm_add_sub1" for hierarchy "lpm_add_sub1:plus_one"
+Info: Elaborating entity "lpm_add_sub" for hierarchy "lpm_add_sub1:plus_one|lpm_add_sub:lpm_add_sub_component"
+Info: Elaborated megafunction instantiation "lpm_add_sub1:plus_one|lpm_add_sub:lpm_add_sub_component"
+Info: Instantiated megafunction "lpm_add_sub1:plus_one|lpm_add_sub:lpm_add_sub_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "ADD"
+    Info: Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES,CIN_USED=NO"
+    Info: Parameter "lpm_representation" = "UNSIGNED"
+    Info: Parameter "lpm_type" = "LPM_ADD_SUB"
+    Info: Parameter "lpm_width" = "8"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_0oh.tdf
+    Info: Found entity 1: add_sub_0oh
+Info: Elaborating entity "add_sub_0oh" for hierarchy "lpm_add_sub1:plus_one|lpm_add_sub:lpm_add_sub_component|add_sub_0oh:auto_generated"
+Info: Implemented 189 device resources after synthesis - the final resource count might be different
+    Info: Implemented 18 input pins
+    Info: Implemented 20 output pins
+    Info: Implemented 151 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 248 megabytes
+    Info: Processing ended: Thu Sep 07 10:02:52 2017
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+
