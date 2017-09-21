@@ -1816,11 +1816,11 @@ dcde44eee59335c1e2fe75d574f9646
 # hierarchies {
 ALU:inst|lpm_ff2:inst3|lpm_ff:lpm_ff_component
 ALU:inst|lpm_ff2:inst4|lpm_ff:lpm_ff_component
-regs:inst17|lpm_ff7:inst8|lpm_ff:lpm_ff_component
-regs:inst17|lpm_ff7:inst7|lpm_ff:lpm_ff_component
-regs:inst17|lpm_ff7:inst6|lpm_ff:lpm_ff_component
-regs:inst17|lpm_ff7:inst5|lpm_ff:lpm_ff_component
-regs:inst17|lpm_ff7:inst|lpm_ff:lpm_ff_component
+regs:inst17|lpm_ff7:REG_SP|lpm_ff:lpm_ff_component
+regs:inst17|lpm_ff7:REG_Y|lpm_ff:lpm_ff_component
+regs:inst17|lpm_ff7:REG_X|lpm_ff:lpm_ff_component
+regs:inst17|lpm_ff7:REG_B|lpm_ff:lpm_ff_component
+regs:inst17|lpm_ff7:REG_A|lpm_ff:lpm_ff_component
 }
 # macro_sequence
 
@@ -2747,39 +2747,6 @@ PC:inst6|lpm_ff6:inst2|lpm_ff:lpm_ff_component
 
 # end
 # entity
-lpm_rom1
-# storage
-db|HC11_moc.(1).cnf
-db|HC11_moc.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-lpm_rom1.vhd
-ca37ee84881b75ff85ffbf3ea6c86033
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-lpm_rom1:OP_code
-}
-# lmf
-..|..|..|..|..|..|quartus iii|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 altsyncram
 # storage
 db|HC11_moc.(16).cnf
@@ -3064,9 +3031,6 @@ d4e3a69a331d3a99d3281790d99a1ebd
 ..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|lpm_decode.inc
 bd0e2f5e01c1bd360461dceb53d48
 }
-# hierarchies {
-lpm_rom1:OP_code|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -3136,9 +3100,6 @@ address_a0
 # memory_file {
 op_code.mif
 1cf8439dd3ba2019ad728bedae69a23b
-}
-# hierarchies {
-lpm_rom1:OP_code|altsyncram:altsyncram_component|altsyncram_f671:auto_generated
 }
 # macro_sequence
 
@@ -3714,35 +3675,15 @@ AUTO_ROM_RECOGNITION
 ON
 }
 # hierarchies {
-regs:inst17|lpm_ff7:inst8
-regs:inst17|lpm_ff7:inst7
-regs:inst17|lpm_ff7:inst6
-regs:inst17|lpm_ff7:inst5
-regs:inst17|lpm_ff7:inst
+regs:inst17|lpm_ff7:REG_SP
+regs:inst17|lpm_ff7:REG_Y
+regs:inst17|lpm_ff7:REG_X
+regs:inst17|lpm_ff7:REG_B
+regs:inst17|lpm_ff7:REG_A
 }
 # lmf
 ..|..|..|..|..|..|quartus iii|quartus|lmf|maxplus2.lmf
 9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-regs
-# storage
-db|HC11_moc.(64).cnf
-db|HC11_moc.(64).cnf
-# case_insensitive
-# source_file
-regs.bdf
-d8bfcff9dee735df39693d96ff67ea0
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-regs:inst17
-}
 # macro_sequence
 
 # end
@@ -3780,6 +3721,471 @@ regs:inst17|lpm_mux4:inst9
 
 # end
 # entity
+regs
+# storage
+db|HC11_moc.(64).cnf
+db|HC11_moc.(64).cnf
+# case_insensitive
+# source_file
+regs.bdf
+a113b12317edefb6a02c16d98a030f4
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+regs:inst17
+}
+# macro_sequence
+
+# end
+# entity
+lpm_rom1
+# storage
+db|HC11_moc.(1).cnf
+db|HC11_moc.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+lpm_rom1.vhd
+9873e6dcdbcb41db096f42809916a5
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+lpm_rom1:OP_code
+}
+# lmf
+..|..|..|..|..|..|quartus iii|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|HC11_moc.(73).cnf
+db|HC11_moc.(73).cnf
+# case_insensitive
+# source_file
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|altsyncram.tdf
+c59b651389d11852cc943b971a09b65
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+ROM
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+16
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_A
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_A
+256
+PARAMETER_SIGNED_DEC
+USR
+OUTDATA_REG_A
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTHAD_B
+1
+PARAMETER_UNKNOWN
+DEF
+NUMWORDS_B
+1
+PARAMETER_UNKNOWN
+DEF
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+DEF
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+op_code.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_INPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_u771
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+q_a9
+-1
+3
+q_a8
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a15
+-1
+3
+q_a14
+-1
+3
+q_a13
+-1
+3
+q_a12
+-1
+3
+q_a11
+-1
+3
+q_a10
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# include_file {
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|altrom.inc
+d4e3a69a331d3a99d3281790d99a1ebd
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|altqpram.inc
+74e08939f96a7ea8e7a4d59a5b01fe7
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|lpm_decode.inc
+bd0e2f5e01c1bd360461dceb53d48
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|altram.inc
+e66a83eccf6717bed97c99d891ad085
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|stratix_ram_block.inc
+2263a3bdfffeb150af977ee13902f70
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|altdpram.inc
+99d442b5b66c88db4daf94d99c6e4e77
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|..|..|..|quartus iii|quartus|libraries|megafunctions|lpm_mux.inc
+c22bfd353214c01495b560fc34e47d79
+}
+# hierarchies {
+lpm_rom1:OP_code|altsyncram:altsyncram_component
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_u771
+# storage
+db|HC11_moc.(74).cnf
+db|HC11_moc.(74).cnf
+# case_insensitive
+# source_file
+db|altsyncram_u771.tdf
+6ab7cbcbbe9d9152ec3398ab473ba0cb
+7
+# used_port {
+q_a9
+-1
+3
+q_a8
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a15
+-1
+3
+q_a14
+-1
+3
+q_a13
+-1
+3
+q_a12
+-1
+3
+q_a11
+-1
+3
+q_a10
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+op_code.mif
+1cf8439dd3ba2019ad728bedae69a23b
+}
+# hierarchies {
+lpm_rom1:OP_code|altsyncram:altsyncram_component|altsyncram_u771:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
 HC11_moc
 # storage
 db|HC11_moc.(0).cnf
@@ -3787,7 +4193,7 @@ db|HC11_moc.(0).cnf
 # case_insensitive
 # source_file
 HC11_moc.bdf
-50e491c86f5212f6f38e37a15acd5663
+932a8ade95515d63ddba6b6cb8c9c0f5
 26
 # internal_option {
 BLOCK_DESIGN_NAMING

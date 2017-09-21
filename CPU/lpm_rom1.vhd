@@ -44,14 +44,14 @@ ENTITY lpm_rom1 IS
 	(
 		address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		clock		: IN STD_LOGIC  := '1';
-		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 	);
 END lpm_rom1;
 
 
 ARCHITECTURE SYN OF lpm_rom1 IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (15 DOWNTO 0);
 
 
 
@@ -74,12 +74,12 @@ ARCHITECTURE SYN OF lpm_rom1 IS
 	PORT (
 			clock0	: IN STD_LOGIC ;
 			address_a	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			q_a	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+			q_a	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
-	q    <= sub_wire0(7 DOWNTO 0);
+	q    <= sub_wire0(15 DOWNTO 0);
 
 	altsyncram_component : altsyncram
 	GENERIC MAP (
@@ -94,7 +94,7 @@ BEGIN
 		outdata_aclr_a => "NONE",
 		outdata_reg_a => "CLOCK0",
 		widthad_a => 8,
-		width_a => 8,
+		width_a => 16,
 		width_byteena_a => 1
 	)
 	PORT MAP (
@@ -136,7 +136,7 @@ END SYN;
 -- Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 -- Retrieval info: PRIVATE: UseDQRAM NUMERIC "0"
 -- Retrieval info: PRIVATE: WidthAddr NUMERIC "8"
--- Retrieval info: PRIVATE: WidthData NUMERIC "8"
+-- Retrieval info: PRIVATE: WidthData NUMERIC "16"
 -- Retrieval info: PRIVATE: rden NUMERIC "0"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
@@ -149,13 +149,13 @@ END SYN;
 -- Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
 -- Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "8"
--- Retrieval info: CONSTANT: WIDTH_A NUMERIC "8"
+-- Retrieval info: CONSTANT: WIDTH_A NUMERIC "16"
 -- Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 -- Retrieval info: USED_PORT: address 0 0 8 0 INPUT NODEFVAL address[7..0]
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC clock
--- Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL q[7..0]
+-- Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL q[15..0]
 -- Retrieval info: CONNECT: @address_a 0 0 8 0 address 0 0 8 0
--- Retrieval info: CONNECT: q 0 0 8 0 @q_a 0 0 8 0
+-- Retrieval info: CONNECT: q 0 0 16 0 @q_a 0 0 16 0
 -- Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_rom1.vhd TRUE
