@@ -40,8 +40,8 @@ applicable agreement for further details.
 	(port
 		(pt 160 40)
 		(output)
-		(text "q[15..0]" (rect 0 0 42 14)(font "Arial" (font_size 8)))
-		(text "q[15..0]" (rect 105 34 141 47)(font "Arial" (font_size 8)))
+		(text "q[16..0]" (rect 0 0 42 14)(font "Arial" (font_size 8)))
+		(text "q[16..0]" (rect 105 34 141 47)(font "Arial" (font_size 8)))
 		(line (pt 160 40)(pt 144 40)(line_width 3))
 	)
 	(drawing

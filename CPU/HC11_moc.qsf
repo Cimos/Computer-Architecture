@@ -64,3 +64,10 @@ set_global_assignment -name QIP_FILE lpm_ff6.qip
 set_global_assignment -name QIP_FILE lpm_ff7.qip
 set_global_assignment -name QIP_FILE lpm_mux4.qip
 set_global_assignment -name QIP_FILE lpm_mux5.qip
+set_global_assignment -name QIP_FILE lpm_mux6.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE HC11_moc.vwf
+set_global_assignment -name QIP_FILE lpm_add_sub5.qip
+set_global_assignment -name QIP_FILE lpm_ff8.qip
+set_global_assignment -name BDF_FILE LSL.bdf
+set_global_assignment -name QIP_FILE lpm_and1.qip
+set_global_assignment -name BDF_FILE LSR.bdf

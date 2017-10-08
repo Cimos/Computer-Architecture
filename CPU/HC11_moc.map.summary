@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Sep 21 12:25:19 2017
+Analysis & Synthesis Status : Successful - Mon Oct 09 03:02:48 2017
 Quartus II Version : 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition
 Revision Name : HC11_moc
 Top-level Entity Name : HC11_moc
 Family : Cyclone II
-Total logic elements : 120
-    Total combinational functions : 80
+Total logic elements : 161
+    Total combinational functions : 121
     Dedicated logic registers : 64
 Total registers : 64
-Total pins : 31
+Total pins : 88
 Total virtual pins : 0
-Total memory bits : 2,560
+Total memory bits : 4,352
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0
