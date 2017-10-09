@@ -37,22 +37,6 @@ applicable agreement for further details.
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 )
 (pin
-	(input)
-	(rect 632 208 800 224)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "zero_in" (rect 5 0 39 12)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 92 12)(pt 117 12)(line_width 1))
-		(line (pt 92 4)(pt 117 4)(line_width 1))
-		(line (pt 121 8)(pt 168 8)(line_width 1))
-		(line (pt 92 12)(pt 92 4)(line_width 1))
-		(line (pt 117 4)(pt 121 8)(line_width 1))
-		(line (pt 117 12)(pt 121 8)(line_width 1))
-	)
-	(text "GND" (rect 136 7 157 17)(font "Arial" (font_size 6)))
-)
-(pin
 	(output)
 	(rect 1320 360 1496 376)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -416,6 +400,25 @@ applicable agreement for further details.
 		(line (pt 13 7)(pt 31 16)(line_width 1))
 		(line (pt 13 25)(pt 31 16)(line_width 1))
 		(circle (rect 31 12 39 20)(line_width 1))
+	)
+)
+(symbol
+	(rect 704 192 800 240)
+	(text "lpm_constant0" (rect 6 1 106 17)(font "Arial" (font_size 10)))
+	(text "inst1" (rect 8 32 31 44)(font "Arial" ))
+	(port
+		(pt 96 24)
+		(output)
+		(text "result[0]" (rect 0 0 46 14)(font "Arial" (font_size 8)))
+		(text "result[0]" (rect 93 -13 139 1)(font "Arial" (font_size 8))(invisible))
+		(line (pt 96 24)(pt 80 24)(line_width 1))
+	)
+	(drawing
+		(text "0" (rect 75 18 80 30)(font "Arial" ))
+		(line (pt 16 16)(pt 80 16)(line_width 1))
+		(line (pt 80 16)(pt 80 32)(line_width 1))
+		(line (pt 80 32)(pt 16 32)(line_width 1))
+		(line (pt 16 32)(pt 16 16)(line_width 1))
 	)
 )
 (connector

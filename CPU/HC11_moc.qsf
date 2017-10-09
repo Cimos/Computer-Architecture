@@ -72,3 +72,7 @@ set_global_assignment -name BDF_FILE LSL.bdf
 set_global_assignment -name QIP_FILE lpm_and1.qip
 set_global_assignment -name BDF_FILE LSR.bdf
 set_global_assignment -name QIP_FILE lpm_ram_dq0.qip
+set_global_assignment -name QIP_FILE lpm_constant0.qip
+set_global_assignment -name QIP_FILE lpm_ff9.qip
+set_global_assignment -name QIP_FILE lpm_mux7.qip
+set_global_assignment -name QIP_FILE lpm_decode2.qip

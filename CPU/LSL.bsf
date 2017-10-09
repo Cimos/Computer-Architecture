@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 160 112)
+	(rect 16 16 152 112)
 	(text "LSL" (rect 5 0 27 14)(font "Arial" (font_size 8)))
 	(text "inst" (rect 8 80 25 92)(font "Arial" ))
 	(port
@@ -31,20 +31,13 @@ applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
-		(pt 0 48)
-		(input)
-		(text "zero_in" (rect 0 0 42 14)(font "Arial" (font_size 8)))
-		(text "zero_in" (rect 21 43 63 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 144 32)
+		(pt 136 32)
 		(output)
 		(text "out[7..0]" (rect 0 0 46 14)(font "Arial" (font_size 8)))
-		(text "out[7..0]" (rect 77 27 123 41)(font "Arial" (font_size 8)))
-		(line (pt 144 32)(pt 128 32)(line_width 3))
+		(text "out[7..0]" (rect 69 27 115 41)(font "Arial" (font_size 8)))
+		(line (pt 136 32)(pt 120 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 128 80)(line_width 1))
+		(rectangle (rect 16 16 120 80)(line_width 1))
 	)
 )

@@ -61,7 +61,6 @@ ARCHITECTURE SYN OF lpm_ram_dq0 IS
 	GENERIC (
 		clock_enable_input_a		: STRING;
 		clock_enable_output_a		: STRING;
-		init_file		: STRING;
 		intended_device_family		: STRING;
 		lpm_hint		: STRING;
 		lpm_type		: STRING;
@@ -90,7 +89,6 @@ BEGIN
 	GENERIC MAP (
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
-		init_file => "ram.mif",
 		intended_device_family => "Cyclone II",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "altsyncram",
@@ -98,7 +96,7 @@ BEGIN
 		operation_mode => "SINGLE_PORT",
 		outdata_aclr_a => "NONE",
 		outdata_reg_a => "CLOCK0",
-		power_up_uninitialized => "FALSE",
+		power_up_uninitialized => "TRUE",
 		widthad_a => 8,
 		width_a => 8,
 		width_byteena_a => 1
@@ -125,14 +123,14 @@ END SYN;
 -- Retrieval info: PRIVATE: AclrOutput NUMERIC "0"
 -- Retrieval info: PRIVATE: BYTE_ENABLE NUMERIC "0"
 -- Retrieval info: PRIVATE: BYTE_SIZE NUMERIC "8"
--- Retrieval info: PRIVATE: BlankMemory NUMERIC "0"
+-- Retrieval info: PRIVATE: BlankMemory NUMERIC "1"
 -- Retrieval info: PRIVATE: CLOCK_ENABLE_INPUT_A NUMERIC "0"
 -- Retrieval info: PRIVATE: CLOCK_ENABLE_OUTPUT_A NUMERIC "0"
 -- Retrieval info: PRIVATE: Clken NUMERIC "0"
 -- Retrieval info: PRIVATE: DataBusSeparated NUMERIC "1"
 -- Retrieval info: PRIVATE: IMPLEMENT_IN_LES NUMERIC "0"
 -- Retrieval info: PRIVATE: INIT_FILE_LAYOUT STRING "PORT_A"
--- Retrieval info: PRIVATE: INIT_TO_SIM_X NUMERIC "0"
+-- Retrieval info: PRIVATE: INIT_TO_SIM_X NUMERIC "1"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
@@ -153,7 +151,6 @@ END SYN;
 -- Retrieval info: PRIVATE: rden NUMERIC "0"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
--- Retrieval info: CONSTANT: INIT_FILE STRING "ram.mif"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
@@ -161,7 +158,7 @@ END SYN;
 -- Retrieval info: CONSTANT: OPERATION_MODE STRING "SINGLE_PORT"
 -- Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
--- Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
+-- Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "TRUE"
 -- Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "8"
 -- Retrieval info: CONSTANT: WIDTH_A NUMERIC "8"
 -- Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
