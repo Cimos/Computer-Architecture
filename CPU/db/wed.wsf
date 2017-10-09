@@ -20,13 +20,13 @@ Altera or its authorized distributors.  Please refer to the
 applicable agreement for further details.
 */
 
-VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/db/HC11_moc.sim.cvwf")
+VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/HC11_moc.vwf")
 {
 	ZOOM{
-		ZBEGIN = 615799;
-		ZEND = 815495;
-		NUMERATOR = 1297;
-		DENOMINATOR = 199696;
+		ZBEGIN = 0;
+		ZEND = 298600;
+		NUMERATOR = 1493;
+		DENOMINATOR = 298600;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -751,13 +751,13 @@ VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/db/HC11_moc.sim.
 	}
 }
 
-VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/HC11_moc.vwf")
+VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/db/HC11_moc.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 298600;
-		NUMERATOR = 1493;
-		DENOMINATOR = 298600;
+		ZBEGIN = 277794;
+		ZEND = 477490;
+		NUMERATOR = 1297;
+		DENOMINATOR = 199696;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
