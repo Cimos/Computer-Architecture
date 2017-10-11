@@ -1735,7 +1735,7 @@ VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/HC11_moc.sim.cvw
 	ZOOM{
 		ZBEGIN = 0;
 		ZEND = 2000000;
-		NUMERATOR = 1465;
+		NUMERATOR = 1493;
 		DENOMINATOR = 2000000;
 		TOP_INDEX = 0;
 	}

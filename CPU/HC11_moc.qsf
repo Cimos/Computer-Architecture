@@ -85,3 +85,4 @@ set_global_assignment -name QIP_FILE lpm_xor1.qip
 set_global_assignment -name QIP_FILE lpm_and2.qip
 set_global_assignment -name BDF_FILE ASRD.bdf
 set_global_assignment -name BDF_FILE LSRD.bdf
+set_global_assignment -name ZIP_VECTOR_WAVEFORM_FILE HC11_moc.sim.cvwf
