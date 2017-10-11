@@ -91,7 +91,7 @@ CONTENT BEGIN
 17 : 00000100010000000000;		-- Result to A 
 18 : 00100011110000000000;		-- Result A to T1
 19 : 01000011101100000000;		-- Result B to T2
-			 	-- Result 0x70FE + 0x55A3 = 0xC5B1
+			 	-- Result 0x70FE + 0x55A3 = 0xC6A1
 
 -- **************************** ADDD FINISH **************************** 
 

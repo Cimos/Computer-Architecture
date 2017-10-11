@@ -911,13 +911,13 @@ VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/HC11_moc.vwf")
 	}
 }
 
-VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/db/HC11_moc.sim.cvwf")
+VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/HC11_moc.sim.cvwf")
 {
 	ZOOM{
 		ZBEGIN = 0;
-		ZEND = 250000;
-		NUMERATOR = 1465;
-		DENOMINATOR = 250000;
+		ZEND = 2000000;
+		NUMERATOR = 1493;
+		DENOMINATOR = 2000000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -1730,13 +1730,13 @@ VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/db/HC11_moc.sim.
 	}
 }
 
-VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/HC11_moc.sim.cvwf")
+VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/db/HC11_moc.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
+		ZBEGIN = 1786690;
 		ZEND = 2000000;
-		NUMERATOR = 1493;
-		DENOMINATOR = 2000000;
+		NUMERATOR = 1250;
+		DENOMINATOR = 213310;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
