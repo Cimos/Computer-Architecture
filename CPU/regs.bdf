@@ -379,48 +379,6 @@ applicable agreement for further details.
 		(line (pt 64 136)(pt 80 128)(line_width 1))
 	)
 )
-(symbol
-	(rect 808 584 952 680)
-	(text "lpm_ff9" (rect 52 1 100 17)(font "Arial" (font_size 10)))
-	(text "Other" (rect 8 80 35 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "data[7..0]" (rect 0 0 53 14)(font "Arial" (font_size 8)))
-		(text "data[7..0]" (rect 20 26 73 40)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
-		(text "clock" (rect 26 42 55 56)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "enable" (rect 0 0 37 14)(font "Arial" (font_size 8)))
-		(text "enable" (rect 20 58 57 72)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 16 64)(line_width 1))
-	)
-	(port
-		(pt 144 56)
-		(output)
-		(text "q[7..0]" (rect 0 0 35 14)(font "Arial" (font_size 8)))
-		(text "q[7..0]" (rect 95 50 130 64)(font "Arial" (font_size 8)))
-		(line (pt 144 56)(pt 128 56)(line_width 3))
-	)
-	(drawing
-		(text "DFF" (rect 109 17 131 29)(font "Arial" ))
-		(line (pt 16 16)(pt 128 16)(line_width 1))
-		(line (pt 128 16)(pt 128 80)(line_width 1))
-		(line (pt 128 80)(pt 16 80)(line_width 1))
-		(line (pt 16 80)(pt 16 16)(line_width 1))
-		(line (pt 16 42)(pt 22 48)(line_width 1))
-		(line (pt 22 48)(pt 16 54)(line_width 1))
-	)
-)
 (connector
 	(pt 984 312)
 	(pt 952 312)
@@ -527,10 +485,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 656 472)
-	(pt 632 472)
-)
-(connector
 	(pt 488 432)
 	(pt 488 816)
 	(bus)
@@ -586,11 +540,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1048 360)
-	(pt 1080 360)
-	(bus)
-)
-(connector
 	(pt 1152 816)
 	(pt 1152 464)
 	(bus)
@@ -624,52 +573,14 @@ applicable agreement for further details.
 	(pt 808 200)
 )
 (connector
-	(pt 728 616)
-	(pt 808 616)
-	(bus)
-)
-(connector
-	(pt 1048 640)
-	(pt 952 640)
-	(bus)
-)
-(connector
-	(pt 760 632)
-	(pt 808 632)
-)
-(connector
-	(pt 656 648)
-	(pt 808 648)
-)
-(connector
-	(pt 656 472)
-	(pt 656 648)
-)
-(connector
-	(pt 1048 360)
-	(pt 1048 640)
-	(bus)
-)
-(connector
 	(pt 728 392)
 	(pt 728 496)
-	(bus)
-)
-(connector
-	(pt 728 496)
-	(pt 728 616)
 	(bus)
 )
 (connector
 	(pt 760 408)
 	(pt 760 512)
 )
-(connector
-	(pt 760 512)
-	(pt 760 632)
-)
-(junction (pt 728 496))
-(junction (pt 760 512))
 (junction (pt 760 408))
 (junction (pt 728 392))
 (junction (pt 760 200))

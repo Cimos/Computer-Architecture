@@ -1,14 +1,11 @@
 |HC11_moc
-Flags[0] <= ALU:inst.C
-Flags[1] <= ALU:inst.V
-Flags[2] <= ALU:inst.Z
-Flags[3] <= ALU:inst.N
+asld_msb_out <= ALU:inst.asld_msb_out
 clk => ALU:inst.clock
 clk => lpm_rom1:OP_code.clock
 clk => PC:inst6.CLK
 clk => regs:inst17.clock
 clk => lpm_ram_dq0:inst3.clock
-clk => lpm_ff7:REG_SP.clock
+clk => lpm_ff7:SP_REG.clock
 q[0] <= lpm_rom1:OP_code.q[0]
 q[1] <= lpm_rom1:OP_code.q[1]
 q[2] <= lpm_rom1:OP_code.q[2]
@@ -28,24 +25,20 @@ q[15] <= lpm_rom1:OP_code.q[15]
 q[16] <= lpm_rom1:OP_code.q[16]
 q[17] <= lpm_rom1:OP_code.q[17]
 q[18] <= lpm_rom1:OP_code.q[18]
+q[19] <= lpm_rom1:OP_code.q[19]
 ld/cnt => PC:inst6.LD/CNT
 pc_rst => PC:inst6.RST
-lsl[0] <= ALU:inst.lsr[0]
-lsl[1] <= ALU:inst.lsr[1]
-lsl[2] <= ALU:inst.lsr[2]
-lsl[3] <= ALU:inst.lsr[3]
-lsl[4] <= ALU:inst.lsr[4]
-lsl[5] <= ALU:inst.lsr[5]
-lsl[6] <= ALU:inst.lsr[6]
-lsl[7] <= ALU:inst.lsr[7]
-lsr[0] <= ALU:inst.lsl[0]
-lsr[1] <= ALU:inst.lsl[1]
-lsr[2] <= ALU:inst.lsl[2]
-lsr[3] <= ALU:inst.lsl[3]
-lsr[4] <= ALU:inst.lsl[4]
-lsr[5] <= ALU:inst.lsl[5]
-lsr[6] <= ALU:inst.lsl[6]
-lsr[7] <= ALU:inst.lsl[7]
+Carry[0] <= ALU:inst.C
+Carry[1] <= <GND>
+Carry[2] <= <GND>
+Carry[3] <= <GND>
+Carry[4] <= <GND>
+Carry[5] <= <GND>
+Carry[6] <= <GND>
+Carry[7] <= <GND>
+Flags[0] <= ALU:inst.V
+Flags[1] <= ALU:inst.Z
+Flags[2] <= ALU:inst.N
 pcout[0] <= PC:inst6.address[0]
 pcout[1] <= PC:inst6.address[1]
 pcout[2] <= PC:inst6.address[2]
@@ -122,24 +115,24 @@ result[4] <= lpm_mux2:inst9.result[4]
 result[5] <= lpm_mux2:inst9.result[5]
 result[6] <= lpm_mux2:inst9.result[6]
 result[7] <= lpm_mux2:inst9.result[7]
-clock => lpm_ff2:inst3.clock
+clock => lpm_ff11:inst30.clock
 clock => lpm_ff8:inst.clock
-T1_enable => lpm_ff2:inst3.enable
-data[0] => lpm_ff2:inst3.data[0]
+T1_enable => lpm_ff11:inst30.enable
+data[0] => lpm_ff11:inst30.data[0]
 data[0] => lpm_ff8:inst.data[0]
-data[1] => lpm_ff2:inst3.data[1]
+data[1] => lpm_ff11:inst30.data[1]
 data[1] => lpm_ff8:inst.data[1]
-data[2] => lpm_ff2:inst3.data[2]
+data[2] => lpm_ff11:inst30.data[2]
 data[2] => lpm_ff8:inst.data[2]
-data[3] => lpm_ff2:inst3.data[3]
+data[3] => lpm_ff11:inst30.data[3]
 data[3] => lpm_ff8:inst.data[3]
-data[4] => lpm_ff2:inst3.data[4]
+data[4] => lpm_ff11:inst30.data[4]
 data[4] => lpm_ff8:inst.data[4]
-data[5] => lpm_ff2:inst3.data[5]
+data[5] => lpm_ff11:inst30.data[5]
 data[5] => lpm_ff8:inst.data[5]
-data[6] => lpm_ff2:inst3.data[6]
+data[6] => lpm_ff11:inst30.data[6]
 data[6] => lpm_ff8:inst.data[6]
-data[7] => lpm_ff2:inst3.data[7]
+data[7] => lpm_ff11:inst30.data[7]
 data[7] => lpm_ff8:inst.data[7]
 T2_enable => lpm_ff8:inst.enable
 ALU_sel[0] => lpm_mux2:inst9.sel[0]
@@ -151,30 +144,15 @@ ALU_sel[2] => lpm_decode1:inst2.data[2]
 C <= inst11.DB_MAX_OUTPUT_PORT_TYPE
 V <= inst22.DB_MAX_OUTPUT_PORT_TYPE
 Z <= inst23.DB_MAX_OUTPUT_PORT_TYPE
-lsl[0] <= LSL:inst1.out[0]
-lsl[1] <= LSL:inst1.out[1]
-lsl[2] <= LSL:inst1.out[2]
-lsl[3] <= LSL:inst1.out[3]
-lsl[4] <= LSL:inst1.out[4]
-lsl[5] <= LSL:inst1.out[5]
-lsl[6] <= LSL:inst1.out[6]
-lsl[7] <= LSL:inst1.out[7]
-lsr[0] <= LSR:inst4.out[0]
-lsr[1] <= LSR:inst4.out[1]
-lsr[2] <= LSR:inst4.out[2]
-lsr[3] <= LSR:inst4.out[3]
-lsr[4] <= LSR:inst4.out[4]
-lsr[5] <= LSR:inst4.out[5]
-lsr[6] <= LSR:inst4.out[6]
-lsr[7] <= LSR:inst4.out[7]
-t_1[0] <= lpm_ff2:inst3.q[0]
-t_1[1] <= lpm_ff2:inst3.q[1]
-t_1[2] <= lpm_ff2:inst3.q[2]
-t_1[3] <= lpm_ff2:inst3.q[3]
-t_1[4] <= lpm_ff2:inst3.q[4]
-t_1[5] <= lpm_ff2:inst3.q[5]
-t_1[6] <= lpm_ff2:inst3.q[6]
-t_1[7] <= lpm_ff2:inst3.q[7]
+asld_msb_out <= LSRD:inst5.msb_for_upper_byte
+t_1[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+t_1[1] <= q[1].DB_MAX_OUTPUT_PORT_TYPE
+t_1[2] <= q[2].DB_MAX_OUTPUT_PORT_TYPE
+t_1[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
+t_1[4] <= q[4].DB_MAX_OUTPUT_PORT_TYPE
+t_1[5] <= q[5].DB_MAX_OUTPUT_PORT_TYPE
+t_1[6] <= q[6].DB_MAX_OUTPUT_PORT_TYPE
+t_1[7] <= q[7].DB_MAX_OUTPUT_PORT_TYPE
 t_2[0] <= lpm_ff8:inst.q[0]
 t_2[1] <= lpm_ff8:inst.q[1]
 t_2[2] <= lpm_ff8:inst.q[2]
@@ -183,6 +161,9 @@ t_2[4] <= lpm_ff8:inst.q[4]
 t_2[5] <= lpm_ff8:inst.q[5]
 t_2[6] <= lpm_ff8:inst.q[6]
 t_2[7] <= lpm_ff8:inst.q[7]
+ALU_sel1[0] => ~NO_FANOUT~
+ALU_sel1[1] => ~NO_FANOUT~
+ALU_sel1[2] => ~NO_FANOUT~
 
 
 |HC11_moc|ALU:inst|lpm_mux2:inst9
@@ -242,6 +223,14 @@ data6x[4] => LPM_MUX:lpm_mux_component.DATA[6][4]
 data6x[5] => LPM_MUX:lpm_mux_component.DATA[6][5]
 data6x[6] => LPM_MUX:lpm_mux_component.DATA[6][6]
 data6x[7] => LPM_MUX:lpm_mux_component.DATA[6][7]
+data7x[0] => LPM_MUX:lpm_mux_component.DATA[7][0]
+data7x[1] => LPM_MUX:lpm_mux_component.DATA[7][1]
+data7x[2] => LPM_MUX:lpm_mux_component.DATA[7][2]
+data7x[3] => LPM_MUX:lpm_mux_component.DATA[7][3]
+data7x[4] => LPM_MUX:lpm_mux_component.DATA[7][4]
+data7x[5] => LPM_MUX:lpm_mux_component.DATA[7][5]
+data7x[6] => LPM_MUX:lpm_mux_component.DATA[7][6]
+data7x[7] => LPM_MUX:lpm_mux_component.DATA[7][7]
 sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
 sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
 sel[2] => LPM_MUX:lpm_mux_component.SEL[2]
@@ -256,79 +245,87 @@ result[7] <= LPM_MUX:lpm_mux_component.RESULT[7]
 
 
 |HC11_moc|ALU:inst|lpm_mux2:inst9|LPM_MUX:lpm_mux_component
-data[0][0] => mux_e3e:auto_generated.data[0]
-data[0][1] => mux_e3e:auto_generated.data[1]
-data[0][2] => mux_e3e:auto_generated.data[2]
-data[0][3] => mux_e3e:auto_generated.data[3]
-data[0][4] => mux_e3e:auto_generated.data[4]
-data[0][5] => mux_e3e:auto_generated.data[5]
-data[0][6] => mux_e3e:auto_generated.data[6]
-data[0][7] => mux_e3e:auto_generated.data[7]
-data[1][0] => mux_e3e:auto_generated.data[8]
-data[1][1] => mux_e3e:auto_generated.data[9]
-data[1][2] => mux_e3e:auto_generated.data[10]
-data[1][3] => mux_e3e:auto_generated.data[11]
-data[1][4] => mux_e3e:auto_generated.data[12]
-data[1][5] => mux_e3e:auto_generated.data[13]
-data[1][6] => mux_e3e:auto_generated.data[14]
-data[1][7] => mux_e3e:auto_generated.data[15]
-data[2][0] => mux_e3e:auto_generated.data[16]
-data[2][1] => mux_e3e:auto_generated.data[17]
-data[2][2] => mux_e3e:auto_generated.data[18]
-data[2][3] => mux_e3e:auto_generated.data[19]
-data[2][4] => mux_e3e:auto_generated.data[20]
-data[2][5] => mux_e3e:auto_generated.data[21]
-data[2][6] => mux_e3e:auto_generated.data[22]
-data[2][7] => mux_e3e:auto_generated.data[23]
-data[3][0] => mux_e3e:auto_generated.data[24]
-data[3][1] => mux_e3e:auto_generated.data[25]
-data[3][2] => mux_e3e:auto_generated.data[26]
-data[3][3] => mux_e3e:auto_generated.data[27]
-data[3][4] => mux_e3e:auto_generated.data[28]
-data[3][5] => mux_e3e:auto_generated.data[29]
-data[3][6] => mux_e3e:auto_generated.data[30]
-data[3][7] => mux_e3e:auto_generated.data[31]
-data[4][0] => mux_e3e:auto_generated.data[32]
-data[4][1] => mux_e3e:auto_generated.data[33]
-data[4][2] => mux_e3e:auto_generated.data[34]
-data[4][3] => mux_e3e:auto_generated.data[35]
-data[4][4] => mux_e3e:auto_generated.data[36]
-data[4][5] => mux_e3e:auto_generated.data[37]
-data[4][6] => mux_e3e:auto_generated.data[38]
-data[4][7] => mux_e3e:auto_generated.data[39]
-data[5][0] => mux_e3e:auto_generated.data[40]
-data[5][1] => mux_e3e:auto_generated.data[41]
-data[5][2] => mux_e3e:auto_generated.data[42]
-data[5][3] => mux_e3e:auto_generated.data[43]
-data[5][4] => mux_e3e:auto_generated.data[44]
-data[5][5] => mux_e3e:auto_generated.data[45]
-data[5][6] => mux_e3e:auto_generated.data[46]
-data[5][7] => mux_e3e:auto_generated.data[47]
-data[6][0] => mux_e3e:auto_generated.data[48]
-data[6][1] => mux_e3e:auto_generated.data[49]
-data[6][2] => mux_e3e:auto_generated.data[50]
-data[6][3] => mux_e3e:auto_generated.data[51]
-data[6][4] => mux_e3e:auto_generated.data[52]
-data[6][5] => mux_e3e:auto_generated.data[53]
-data[6][6] => mux_e3e:auto_generated.data[54]
-data[6][7] => mux_e3e:auto_generated.data[55]
-sel[0] => mux_e3e:auto_generated.sel[0]
-sel[1] => mux_e3e:auto_generated.sel[1]
-sel[2] => mux_e3e:auto_generated.sel[2]
+data[0][0] => mux_f3e:auto_generated.data[0]
+data[0][1] => mux_f3e:auto_generated.data[1]
+data[0][2] => mux_f3e:auto_generated.data[2]
+data[0][3] => mux_f3e:auto_generated.data[3]
+data[0][4] => mux_f3e:auto_generated.data[4]
+data[0][5] => mux_f3e:auto_generated.data[5]
+data[0][6] => mux_f3e:auto_generated.data[6]
+data[0][7] => mux_f3e:auto_generated.data[7]
+data[1][0] => mux_f3e:auto_generated.data[8]
+data[1][1] => mux_f3e:auto_generated.data[9]
+data[1][2] => mux_f3e:auto_generated.data[10]
+data[1][3] => mux_f3e:auto_generated.data[11]
+data[1][4] => mux_f3e:auto_generated.data[12]
+data[1][5] => mux_f3e:auto_generated.data[13]
+data[1][6] => mux_f3e:auto_generated.data[14]
+data[1][7] => mux_f3e:auto_generated.data[15]
+data[2][0] => mux_f3e:auto_generated.data[16]
+data[2][1] => mux_f3e:auto_generated.data[17]
+data[2][2] => mux_f3e:auto_generated.data[18]
+data[2][3] => mux_f3e:auto_generated.data[19]
+data[2][4] => mux_f3e:auto_generated.data[20]
+data[2][5] => mux_f3e:auto_generated.data[21]
+data[2][6] => mux_f3e:auto_generated.data[22]
+data[2][7] => mux_f3e:auto_generated.data[23]
+data[3][0] => mux_f3e:auto_generated.data[24]
+data[3][1] => mux_f3e:auto_generated.data[25]
+data[3][2] => mux_f3e:auto_generated.data[26]
+data[3][3] => mux_f3e:auto_generated.data[27]
+data[3][4] => mux_f3e:auto_generated.data[28]
+data[3][5] => mux_f3e:auto_generated.data[29]
+data[3][6] => mux_f3e:auto_generated.data[30]
+data[3][7] => mux_f3e:auto_generated.data[31]
+data[4][0] => mux_f3e:auto_generated.data[32]
+data[4][1] => mux_f3e:auto_generated.data[33]
+data[4][2] => mux_f3e:auto_generated.data[34]
+data[4][3] => mux_f3e:auto_generated.data[35]
+data[4][4] => mux_f3e:auto_generated.data[36]
+data[4][5] => mux_f3e:auto_generated.data[37]
+data[4][6] => mux_f3e:auto_generated.data[38]
+data[4][7] => mux_f3e:auto_generated.data[39]
+data[5][0] => mux_f3e:auto_generated.data[40]
+data[5][1] => mux_f3e:auto_generated.data[41]
+data[5][2] => mux_f3e:auto_generated.data[42]
+data[5][3] => mux_f3e:auto_generated.data[43]
+data[5][4] => mux_f3e:auto_generated.data[44]
+data[5][5] => mux_f3e:auto_generated.data[45]
+data[5][6] => mux_f3e:auto_generated.data[46]
+data[5][7] => mux_f3e:auto_generated.data[47]
+data[6][0] => mux_f3e:auto_generated.data[48]
+data[6][1] => mux_f3e:auto_generated.data[49]
+data[6][2] => mux_f3e:auto_generated.data[50]
+data[6][3] => mux_f3e:auto_generated.data[51]
+data[6][4] => mux_f3e:auto_generated.data[52]
+data[6][5] => mux_f3e:auto_generated.data[53]
+data[6][6] => mux_f3e:auto_generated.data[54]
+data[6][7] => mux_f3e:auto_generated.data[55]
+data[7][0] => mux_f3e:auto_generated.data[56]
+data[7][1] => mux_f3e:auto_generated.data[57]
+data[7][2] => mux_f3e:auto_generated.data[58]
+data[7][3] => mux_f3e:auto_generated.data[59]
+data[7][4] => mux_f3e:auto_generated.data[60]
+data[7][5] => mux_f3e:auto_generated.data[61]
+data[7][6] => mux_f3e:auto_generated.data[62]
+data[7][7] => mux_f3e:auto_generated.data[63]
+sel[0] => mux_f3e:auto_generated.sel[0]
+sel[1] => mux_f3e:auto_generated.sel[1]
+sel[2] => mux_f3e:auto_generated.sel[2]
 clock => ~NO_FANOUT~
 aclr => ~NO_FANOUT~
 clken => ~NO_FANOUT~
-result[0] <= mux_e3e:auto_generated.result[0]
-result[1] <= mux_e3e:auto_generated.result[1]
-result[2] <= mux_e3e:auto_generated.result[2]
-result[3] <= mux_e3e:auto_generated.result[3]
-result[4] <= mux_e3e:auto_generated.result[4]
-result[5] <= mux_e3e:auto_generated.result[5]
-result[6] <= mux_e3e:auto_generated.result[6]
-result[7] <= mux_e3e:auto_generated.result[7]
+result[0] <= mux_f3e:auto_generated.result[0]
+result[1] <= mux_f3e:auto_generated.result[1]
+result[2] <= mux_f3e:auto_generated.result[2]
+result[3] <= mux_f3e:auto_generated.result[3]
+result[4] <= mux_f3e:auto_generated.result[4]
+result[5] <= mux_f3e:auto_generated.result[5]
+result[6] <= mux_f3e:auto_generated.result[6]
+result[7] <= mux_f3e:auto_generated.result[7]
 
 
-|HC11_moc|ALU:inst|lpm_mux2:inst9|LPM_MUX:lpm_mux_component|mux_e3e:auto_generated
+|HC11_moc|ALU:inst|lpm_mux2:inst9|LPM_MUX:lpm_mux_component|mux_f3e:auto_generated
 result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
 result[1] <= result_node[1].DB_MAX_OUTPUT_PORT_TYPE
 result[2] <= result_node[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -431,7 +428,7 @@ result[6] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|HC11_moc|ALU:inst|lpm_ff2:inst3
+|HC11_moc|ALU:inst|lpm_ff11:inst30
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
 data[1] => lpm_ff:lpm_ff_component.data[1]
@@ -452,7 +449,7 @@ q[6] <= lpm_ff:lpm_ff_component.q[6]
 q[7] <= lpm_ff:lpm_ff_component.q[7]
 
 
-|HC11_moc|ALU:inst|lpm_ff2:inst3|lpm_ff:lpm_ff_component
+|HC11_moc|ALU:inst|lpm_ff11:inst30|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN
@@ -646,7 +643,7 @@ result[6] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|HC11_moc|ALU:inst|lpm_and0:inst6
+|HC11_moc|ALU:inst|lpm_and2:inst33
 data0x[0] => LPM_AND:lpm_and_component.DATA[0][0]
 data0x[1] => LPM_AND:lpm_and_component.DATA[0][1]
 data0x[2] => LPM_AND:lpm_and_component.DATA[0][2]
@@ -673,7 +670,7 @@ result[6] <= LPM_AND:lpm_and_component.RESULT[6]
 result[7] <= LPM_AND:lpm_and_component.RESULT[7]
 
 
-|HC11_moc|ALU:inst|lpm_and0:inst6|LPM_AND:lpm_and_component
+|HC11_moc|ALU:inst|lpm_and2:inst33|LPM_AND:lpm_and_component
 data[0][0] => and_node[0][1].IN1
 data[0][1] => and_node[1][1].IN1
 data[0][2] => and_node[2][1].IN1
@@ -700,7 +697,7 @@ result[6] <= and_node[6][1].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= and_node[7][1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|HC11_moc|ALU:inst|lpm_or0:inst7
+|HC11_moc|ALU:inst|lpm_or1:inst31
 data0x[0] => LPM_OR:lpm_or_component.DATA[0][0]
 data0x[1] => LPM_OR:lpm_or_component.DATA[0][1]
 data0x[2] => LPM_OR:lpm_or_component.DATA[0][2]
@@ -727,7 +724,7 @@ result[6] <= LPM_OR:lpm_or_component.RESULT[6]
 result[7] <= LPM_OR:lpm_or_component.RESULT[7]
 
 
-|HC11_moc|ALU:inst|lpm_or0:inst7|LPM_OR:lpm_or_component
+|HC11_moc|ALU:inst|lpm_or1:inst31|LPM_OR:lpm_or_component
 data[0][0] => or_node[0][1].IN1
 data[0][1] => or_node[1][1].IN1
 data[0][2] => or_node[2][1].IN1
@@ -754,7 +751,7 @@ result[6] <= or_node[6][1].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= or_node[7][1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|HC11_moc|ALU:inst|lpm_xor0:inst8
+|HC11_moc|ALU:inst|lpm_xor1:inst32
 data0x[0] => LPM_XOR:lpm_xor_component.DATA[0][0]
 data0x[1] => LPM_XOR:lpm_xor_component.DATA[0][1]
 data0x[2] => LPM_XOR:lpm_xor_component.DATA[0][2]
@@ -781,7 +778,7 @@ result[6] <= LPM_XOR:lpm_xor_component.RESULT[6]
 result[7] <= LPM_XOR:lpm_xor_component.RESULT[7]
 
 
-|HC11_moc|ALU:inst|lpm_xor0:inst8|LPM_XOR:lpm_xor_component
+|HC11_moc|ALU:inst|lpm_xor1:inst32|LPM_XOR:lpm_xor_component
 data[0][0] => xor_cascade[0][1].IN1
 data[0][1] => xor_cascade[1][1].IN1
 data[0][2] => xor_cascade[2][1].IN1
@@ -808,7 +805,57 @@ result[6] <= xor_cascade[6][1].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= xor_cascade[7][1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|HC11_moc|ALU:inst|LSR:inst4
+|HC11_moc|ALU:inst|LSRD:inst6
+msb_for_upper_byte <= in2[7].DB_MAX_OUTPUT_PORT_TYPE
+in2[0] => inst34.IN0
+in2[1] => inst32.IN0
+in2[2] => inst30.IN0
+in2[3] => inst28.IN0
+in2[4] => inst26.IN0
+in2[5] => inst24.IN0
+in2[6] => inst4.IN0
+in2[7] => msb_for_upper_byte.DATAIN
+out3[0] <= in_from_lower_byte.DB_MAX_OUTPUT_PORT_TYPE
+out3[1] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+out3[2] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+out3[3] <= inst31.DB_MAX_OUTPUT_PORT_TYPE
+out3[4] <= inst29.DB_MAX_OUTPUT_PORT_TYPE
+out3[5] <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+out3[6] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+out3[7] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+in_from_lower_byte => out3[0].DATAIN
+
+
+|HC11_moc|ALU:inst|LSRD:inst5
+msb_for_upper_byte <= in2[7].DB_MAX_OUTPUT_PORT_TYPE
+in2[0] => inst34.IN0
+in2[1] => inst32.IN0
+in2[2] => inst30.IN0
+in2[3] => inst28.IN0
+in2[4] => inst26.IN0
+in2[5] => inst24.IN0
+in2[6] => inst4.IN0
+in2[7] => msb_for_upper_byte.DATAIN
+out3[0] <= in_from_lower_byte.DB_MAX_OUTPUT_PORT_TYPE
+out3[1] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+out3[2] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+out3[3] <= inst31.DB_MAX_OUTPUT_PORT_TYPE
+out3[4] <= inst29.DB_MAX_OUTPUT_PORT_TYPE
+out3[5] <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+out3[6] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+out3[7] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+in_from_lower_byte => out3[0].DATAIN
+
+
+|HC11_moc|ALU:inst|lpm_constant0:inst1
+result[0] <= lpm_constant:lpm_constant_component.result[0]
+
+
+|HC11_moc|ALU:inst|lpm_constant0:inst1|lpm_constant:lpm_constant_component
+result[0] <= <GND>
+
+
+|HC11_moc|ALU:inst|ASR:inst7
 out[0] <= inst22.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= inst18.DB_MAX_OUTPUT_PORT_TYPE
@@ -827,38 +874,11 @@ in[6] => inst11.IN0
 in[7] => inst.IN0
 
 
-|HC11_moc|ALU:inst|LSR:inst4|lpm_constant0:inst1
+|HC11_moc|ALU:inst|ASR:inst7|lpm_constant0:inst1
 result[0] <= lpm_constant:lpm_constant_component.result[0]
 
 
-|HC11_moc|ALU:inst|LSR:inst4|lpm_constant0:inst1|lpm_constant:lpm_constant_component
-result[0] <= <GND>
-
-
-|HC11_moc|ALU:inst|LSL:inst1
-out[0] <= lpm_constant0:inst1.result[0]
-out[1] <= inst22.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= inst18.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= inst14.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
-in[0] => inst21.IN0
-in[1] => inst19.IN0
-in[2] => inst17.IN0
-in[3] => inst15.IN0
-in[4] => inst13.IN0
-in[5] => inst11.IN0
-in[6] => inst.IN0
-in[7] => ~NO_FANOUT~
-
-
-|HC11_moc|ALU:inst|LSL:inst1|lpm_constant0:inst1
-result[0] <= lpm_constant:lpm_constant_component.result[0]
-
-
-|HC11_moc|ALU:inst|LSL:inst1|lpm_constant0:inst1|lpm_constant:lpm_constant_component
+|HC11_moc|ALU:inst|ASR:inst7|lpm_constant0:inst1|lpm_constant:lpm_constant_component
 result[0] <= <GND>
 
 
@@ -872,7 +892,7 @@ eq2 <= lpm_decode:lpm_decode_component.eq[2]
 eq3 <= lpm_decode:lpm_decode_component.eq[3]
 eq4 <= lpm_decode:lpm_decode_component.eq[4]
 eq5 <= lpm_decode:lpm_decode_component.eq[5]
-eq6 <= lpm_decode:lpm_decode_component.eq[6]
+eq7 <= lpm_decode:lpm_decode_component.eq[7]
 
 
 |HC11_moc|ALU:inst|lpm_decode1:inst2|lpm_decode:lpm_decode_component
@@ -945,6 +965,7 @@ q[15] <= altsyncram:altsyncram_component.q_a[15]
 q[16] <= altsyncram:altsyncram_component.q_a[16]
 q[17] <= altsyncram:altsyncram_component.q_a[17]
 q[18] <= altsyncram:altsyncram_component.q_a[18]
+q[19] <= altsyncram:altsyncram_component.q_a[19]
 
 
 |HC11_moc|lpm_rom1:OP_code|altsyncram:altsyncram_component
@@ -971,19 +992,20 @@ data_a[15] => ~NO_FANOUT~
 data_a[16] => ~NO_FANOUT~
 data_a[17] => ~NO_FANOUT~
 data_a[18] => ~NO_FANOUT~
+data_a[19] => ~NO_FANOUT~
 data_b[0] => ~NO_FANOUT~
-address_a[0] => altsyncram_1871:auto_generated.address_a[0]
-address_a[1] => altsyncram_1871:auto_generated.address_a[1]
-address_a[2] => altsyncram_1871:auto_generated.address_a[2]
-address_a[3] => altsyncram_1871:auto_generated.address_a[3]
-address_a[4] => altsyncram_1871:auto_generated.address_a[4]
-address_a[5] => altsyncram_1871:auto_generated.address_a[5]
-address_a[6] => altsyncram_1871:auto_generated.address_a[6]
-address_a[7] => altsyncram_1871:auto_generated.address_a[7]
+address_a[0] => altsyncram_p771:auto_generated.address_a[0]
+address_a[1] => altsyncram_p771:auto_generated.address_a[1]
+address_a[2] => altsyncram_p771:auto_generated.address_a[2]
+address_a[3] => altsyncram_p771:auto_generated.address_a[3]
+address_a[4] => altsyncram_p771:auto_generated.address_a[4]
+address_a[5] => altsyncram_p771:auto_generated.address_a[5]
+address_a[6] => altsyncram_p771:auto_generated.address_a[6]
+address_a[7] => altsyncram_p771:auto_generated.address_a[7]
 address_b[0] => ~NO_FANOUT~
 addressstall_a => ~NO_FANOUT~
 addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_1871:auto_generated.clock0
+clock0 => altsyncram_p771:auto_generated.clock0
 clock1 => ~NO_FANOUT~
 clocken0 => ~NO_FANOUT~
 clocken1 => ~NO_FANOUT~
@@ -993,32 +1015,33 @@ aclr0 => ~NO_FANOUT~
 aclr1 => ~NO_FANOUT~
 byteena_a[0] => ~NO_FANOUT~
 byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_1871:auto_generated.q_a[0]
-q_a[1] <= altsyncram_1871:auto_generated.q_a[1]
-q_a[2] <= altsyncram_1871:auto_generated.q_a[2]
-q_a[3] <= altsyncram_1871:auto_generated.q_a[3]
-q_a[4] <= altsyncram_1871:auto_generated.q_a[4]
-q_a[5] <= altsyncram_1871:auto_generated.q_a[5]
-q_a[6] <= altsyncram_1871:auto_generated.q_a[6]
-q_a[7] <= altsyncram_1871:auto_generated.q_a[7]
-q_a[8] <= altsyncram_1871:auto_generated.q_a[8]
-q_a[9] <= altsyncram_1871:auto_generated.q_a[9]
-q_a[10] <= altsyncram_1871:auto_generated.q_a[10]
-q_a[11] <= altsyncram_1871:auto_generated.q_a[11]
-q_a[12] <= altsyncram_1871:auto_generated.q_a[12]
-q_a[13] <= altsyncram_1871:auto_generated.q_a[13]
-q_a[14] <= altsyncram_1871:auto_generated.q_a[14]
-q_a[15] <= altsyncram_1871:auto_generated.q_a[15]
-q_a[16] <= altsyncram_1871:auto_generated.q_a[16]
-q_a[17] <= altsyncram_1871:auto_generated.q_a[17]
-q_a[18] <= altsyncram_1871:auto_generated.q_a[18]
+q_a[0] <= altsyncram_p771:auto_generated.q_a[0]
+q_a[1] <= altsyncram_p771:auto_generated.q_a[1]
+q_a[2] <= altsyncram_p771:auto_generated.q_a[2]
+q_a[3] <= altsyncram_p771:auto_generated.q_a[3]
+q_a[4] <= altsyncram_p771:auto_generated.q_a[4]
+q_a[5] <= altsyncram_p771:auto_generated.q_a[5]
+q_a[6] <= altsyncram_p771:auto_generated.q_a[6]
+q_a[7] <= altsyncram_p771:auto_generated.q_a[7]
+q_a[8] <= altsyncram_p771:auto_generated.q_a[8]
+q_a[9] <= altsyncram_p771:auto_generated.q_a[9]
+q_a[10] <= altsyncram_p771:auto_generated.q_a[10]
+q_a[11] <= altsyncram_p771:auto_generated.q_a[11]
+q_a[12] <= altsyncram_p771:auto_generated.q_a[12]
+q_a[13] <= altsyncram_p771:auto_generated.q_a[13]
+q_a[14] <= altsyncram_p771:auto_generated.q_a[14]
+q_a[15] <= altsyncram_p771:auto_generated.q_a[15]
+q_a[16] <= altsyncram_p771:auto_generated.q_a[16]
+q_a[17] <= altsyncram_p771:auto_generated.q_a[17]
+q_a[18] <= altsyncram_p771:auto_generated.q_a[18]
+q_a[19] <= altsyncram_p771:auto_generated.q_a[19]
 q_b[0] <= <GND>
 eccstatus[0] <= <GND>
 eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|HC11_moc|lpm_rom1:OP_code|altsyncram:altsyncram_component|altsyncram_1871:auto_generated
+|HC11_moc|lpm_rom1:OP_code|altsyncram:altsyncram_component|altsyncram_p771:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -1038,6 +1061,7 @@ address_a[0] => ram_block1a15.PORTAADDR
 address_a[0] => ram_block1a16.PORTAADDR
 address_a[0] => ram_block1a17.PORTAADDR
 address_a[0] => ram_block1a18.PORTAADDR
+address_a[0] => ram_block1a19.PORTAADDR
 address_a[1] => ram_block1a0.PORTAADDR1
 address_a[1] => ram_block1a1.PORTAADDR1
 address_a[1] => ram_block1a2.PORTAADDR1
@@ -1057,6 +1081,7 @@ address_a[1] => ram_block1a15.PORTAADDR1
 address_a[1] => ram_block1a16.PORTAADDR1
 address_a[1] => ram_block1a17.PORTAADDR1
 address_a[1] => ram_block1a18.PORTAADDR1
+address_a[1] => ram_block1a19.PORTAADDR1
 address_a[2] => ram_block1a0.PORTAADDR2
 address_a[2] => ram_block1a1.PORTAADDR2
 address_a[2] => ram_block1a2.PORTAADDR2
@@ -1076,6 +1101,7 @@ address_a[2] => ram_block1a15.PORTAADDR2
 address_a[2] => ram_block1a16.PORTAADDR2
 address_a[2] => ram_block1a17.PORTAADDR2
 address_a[2] => ram_block1a18.PORTAADDR2
+address_a[2] => ram_block1a19.PORTAADDR2
 address_a[3] => ram_block1a0.PORTAADDR3
 address_a[3] => ram_block1a1.PORTAADDR3
 address_a[3] => ram_block1a2.PORTAADDR3
@@ -1095,6 +1121,7 @@ address_a[3] => ram_block1a15.PORTAADDR3
 address_a[3] => ram_block1a16.PORTAADDR3
 address_a[3] => ram_block1a17.PORTAADDR3
 address_a[3] => ram_block1a18.PORTAADDR3
+address_a[3] => ram_block1a19.PORTAADDR3
 address_a[4] => ram_block1a0.PORTAADDR4
 address_a[4] => ram_block1a1.PORTAADDR4
 address_a[4] => ram_block1a2.PORTAADDR4
@@ -1114,6 +1141,7 @@ address_a[4] => ram_block1a15.PORTAADDR4
 address_a[4] => ram_block1a16.PORTAADDR4
 address_a[4] => ram_block1a17.PORTAADDR4
 address_a[4] => ram_block1a18.PORTAADDR4
+address_a[4] => ram_block1a19.PORTAADDR4
 address_a[5] => ram_block1a0.PORTAADDR5
 address_a[5] => ram_block1a1.PORTAADDR5
 address_a[5] => ram_block1a2.PORTAADDR5
@@ -1133,6 +1161,7 @@ address_a[5] => ram_block1a15.PORTAADDR5
 address_a[5] => ram_block1a16.PORTAADDR5
 address_a[5] => ram_block1a17.PORTAADDR5
 address_a[5] => ram_block1a18.PORTAADDR5
+address_a[5] => ram_block1a19.PORTAADDR5
 address_a[6] => ram_block1a0.PORTAADDR6
 address_a[6] => ram_block1a1.PORTAADDR6
 address_a[6] => ram_block1a2.PORTAADDR6
@@ -1152,6 +1181,7 @@ address_a[6] => ram_block1a15.PORTAADDR6
 address_a[6] => ram_block1a16.PORTAADDR6
 address_a[6] => ram_block1a17.PORTAADDR6
 address_a[6] => ram_block1a18.PORTAADDR6
+address_a[6] => ram_block1a19.PORTAADDR6
 address_a[7] => ram_block1a0.PORTAADDR7
 address_a[7] => ram_block1a1.PORTAADDR7
 address_a[7] => ram_block1a2.PORTAADDR7
@@ -1171,6 +1201,7 @@ address_a[7] => ram_block1a15.PORTAADDR7
 address_a[7] => ram_block1a16.PORTAADDR7
 address_a[7] => ram_block1a17.PORTAADDR7
 address_a[7] => ram_block1a18.PORTAADDR7
+address_a[7] => ram_block1a19.PORTAADDR7
 clock0 => ram_block1a0.CLK0
 clock0 => ram_block1a1.CLK0
 clock0 => ram_block1a2.CLK0
@@ -1190,6 +1221,7 @@ clock0 => ram_block1a15.CLK0
 clock0 => ram_block1a16.CLK0
 clock0 => ram_block1a17.CLK0
 clock0 => ram_block1a18.CLK0
+clock0 => ram_block1a19.CLK0
 q_a[0] <= ram_block1a0.PORTADATAOUT
 q_a[1] <= ram_block1a1.PORTADATAOUT
 q_a[2] <= ram_block1a2.PORTADATAOUT
@@ -1209,6 +1241,7 @@ q_a[15] <= ram_block1a15.PORTADATAOUT
 q_a[16] <= ram_block1a16.PORTADATAOUT
 q_a[17] <= ram_block1a17.PORTADATAOUT
 q_a[18] <= ram_block1a18.PORTADATAOUT
+q_a[19] <= ram_block1a19.PORTADATAOUT
 
 
 |HC11_moc|PC:inst6
@@ -1457,7 +1490,6 @@ clock => lpm_ff7:REG_Y.clock
 clock => lpm_ff7:REG_X.clock
 clock => lpm_ff7:REG_B.clock
 clock => lpm_ff7:REG_A.clock
-clock => lpm_ff9:Other.clock
 reg_select[0] => lpm_decode0:inst4.data[0]
 reg_select[0] => lpm_mux4:inst9.sel[0]
 reg_select[1] => lpm_decode0:inst4.data[1]
@@ -1468,42 +1500,34 @@ data_in[0] => lpm_ff7:REG_Y.data[0]
 data_in[0] => lpm_ff7:REG_X.data[0]
 data_in[0] => lpm_ff7:REG_B.data[0]
 data_in[0] => lpm_ff7:REG_A.data[0]
-data_in[0] => lpm_ff9:Other.data[0]
 data_in[1] => lpm_ff7:REG_Y.data[1]
 data_in[1] => lpm_ff7:REG_X.data[1]
 data_in[1] => lpm_ff7:REG_B.data[1]
 data_in[1] => lpm_ff7:REG_A.data[1]
-data_in[1] => lpm_ff9:Other.data[1]
 data_in[2] => lpm_ff7:REG_Y.data[2]
 data_in[2] => lpm_ff7:REG_X.data[2]
 data_in[2] => lpm_ff7:REG_B.data[2]
 data_in[2] => lpm_ff7:REG_A.data[2]
-data_in[2] => lpm_ff9:Other.data[2]
 data_in[3] => lpm_ff7:REG_Y.data[3]
 data_in[3] => lpm_ff7:REG_X.data[3]
 data_in[3] => lpm_ff7:REG_B.data[3]
 data_in[3] => lpm_ff7:REG_A.data[3]
-data_in[3] => lpm_ff9:Other.data[3]
 data_in[4] => lpm_ff7:REG_Y.data[4]
 data_in[4] => lpm_ff7:REG_X.data[4]
 data_in[4] => lpm_ff7:REG_B.data[4]
 data_in[4] => lpm_ff7:REG_A.data[4]
-data_in[4] => lpm_ff9:Other.data[4]
 data_in[5] => lpm_ff7:REG_Y.data[5]
 data_in[5] => lpm_ff7:REG_X.data[5]
 data_in[5] => lpm_ff7:REG_B.data[5]
 data_in[5] => lpm_ff7:REG_A.data[5]
-data_in[5] => lpm_ff9:Other.data[5]
 data_in[6] => lpm_ff7:REG_Y.data[6]
 data_in[6] => lpm_ff7:REG_X.data[6]
 data_in[6] => lpm_ff7:REG_B.data[6]
 data_in[6] => lpm_ff7:REG_A.data[6]
-data_in[6] => lpm_ff9:Other.data[6]
 data_in[7] => lpm_ff7:REG_Y.data[7]
 data_in[7] => lpm_ff7:REG_X.data[7]
 data_in[7] => lpm_ff7:REG_B.data[7]
 data_in[7] => lpm_ff7:REG_A.data[7]
-data_in[7] => lpm_ff9:Other.data[7]
 
 
 |HC11_moc|regs:inst17|lpm_mux4:inst9
@@ -1945,68 +1969,6 @@ q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|HC11_moc|regs:inst17|lpm_ff9:Other
-clock => lpm_ff:lpm_ff_component.clock
-data[0] => lpm_ff:lpm_ff_component.data[0]
-data[1] => lpm_ff:lpm_ff_component.data[1]
-data[2] => lpm_ff:lpm_ff_component.data[2]
-data[3] => lpm_ff:lpm_ff_component.data[3]
-data[4] => lpm_ff:lpm_ff_component.data[4]
-data[5] => lpm_ff:lpm_ff_component.data[5]
-data[6] => lpm_ff:lpm_ff_component.data[6]
-data[7] => lpm_ff:lpm_ff_component.data[7]
-enable => lpm_ff:lpm_ff_component.enable
-q[0] <= lpm_ff:lpm_ff_component.q[0]
-q[1] <= lpm_ff:lpm_ff_component.q[1]
-q[2] <= lpm_ff:lpm_ff_component.q[2]
-q[3] <= lpm_ff:lpm_ff_component.q[3]
-q[4] <= lpm_ff:lpm_ff_component.q[4]
-q[5] <= lpm_ff:lpm_ff_component.q[5]
-q[6] <= lpm_ff:lpm_ff_component.q[6]
-q[7] <= lpm_ff:lpm_ff_component.q[7]
-
-
-|HC11_moc|regs:inst17|lpm_ff9:Other|lpm_ff:lpm_ff_component
-data[0] => dffs[0].DATAIN
-data[1] => dffs[1].DATAIN
-data[2] => dffs[2].DATAIN
-data[3] => dffs[3].DATAIN
-data[4] => dffs[4].DATAIN
-data[5] => dffs[5].DATAIN
-data[6] => dffs[6].DATAIN
-data[7] => dffs[7].DATAIN
-clock => dffs[7].CLK
-clock => dffs[6].CLK
-clock => dffs[5].CLK
-clock => dffs[4].CLK
-clock => dffs[3].CLK
-clock => dffs[2].CLK
-clock => dffs[1].CLK
-clock => dffs[0].CLK
-enable => dffs[7].ENA
-enable => dffs[6].ENA
-enable => dffs[5].ENA
-enable => dffs[4].ENA
-enable => dffs[3].ENA
-enable => dffs[2].ENA
-enable => dffs[1].ENA
-enable => dffs[0].ENA
-aclr => ~NO_FANOUT~
-aset => ~NO_FANOUT~
-aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
-sset => ~NO_FANOUT~
-sload => ~NO_FANOUT~
-q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= dffs[5].DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
 |HC11_moc|lpm_mux6:inst2
 data0x[0] => LPM_MUX:lpm_mux_component.DATA[0][0]
 data0x[1] => LPM_MUX:lpm_mux_component.DATA[0][1]
@@ -2040,8 +2002,17 @@ data3x[4] => LPM_MUX:lpm_mux_component.DATA[3][4]
 data3x[5] => LPM_MUX:lpm_mux_component.DATA[3][5]
 data3x[6] => LPM_MUX:lpm_mux_component.DATA[3][6]
 data3x[7] => LPM_MUX:lpm_mux_component.DATA[3][7]
+data4x[0] => LPM_MUX:lpm_mux_component.DATA[4][0]
+data4x[1] => LPM_MUX:lpm_mux_component.DATA[4][1]
+data4x[2] => LPM_MUX:lpm_mux_component.DATA[4][2]
+data4x[3] => LPM_MUX:lpm_mux_component.DATA[4][3]
+data4x[4] => LPM_MUX:lpm_mux_component.DATA[4][4]
+data4x[5] => LPM_MUX:lpm_mux_component.DATA[4][5]
+data4x[6] => LPM_MUX:lpm_mux_component.DATA[4][6]
+data4x[7] => LPM_MUX:lpm_mux_component.DATA[4][7]
 sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
 sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
+sel[2] => LPM_MUX:lpm_mux_component.SEL[2]
 result[0] <= LPM_MUX:lpm_mux_component.RESULT[0]
 result[1] <= LPM_MUX:lpm_mux_component.RESULT[1]
 result[2] <= LPM_MUX:lpm_mux_component.RESULT[2]
@@ -2053,62 +2024,71 @@ result[7] <= LPM_MUX:lpm_mux_component.RESULT[7]
 
 
 |HC11_moc|lpm_mux6:inst2|LPM_MUX:lpm_mux_component
-data[0][0] => mux_a3e:auto_generated.data[0]
-data[0][1] => mux_a3e:auto_generated.data[1]
-data[0][2] => mux_a3e:auto_generated.data[2]
-data[0][3] => mux_a3e:auto_generated.data[3]
-data[0][4] => mux_a3e:auto_generated.data[4]
-data[0][5] => mux_a3e:auto_generated.data[5]
-data[0][6] => mux_a3e:auto_generated.data[6]
-data[0][7] => mux_a3e:auto_generated.data[7]
-data[1][0] => mux_a3e:auto_generated.data[8]
-data[1][1] => mux_a3e:auto_generated.data[9]
-data[1][2] => mux_a3e:auto_generated.data[10]
-data[1][3] => mux_a3e:auto_generated.data[11]
-data[1][4] => mux_a3e:auto_generated.data[12]
-data[1][5] => mux_a3e:auto_generated.data[13]
-data[1][6] => mux_a3e:auto_generated.data[14]
-data[1][7] => mux_a3e:auto_generated.data[15]
-data[2][0] => mux_a3e:auto_generated.data[16]
-data[2][1] => mux_a3e:auto_generated.data[17]
-data[2][2] => mux_a3e:auto_generated.data[18]
-data[2][3] => mux_a3e:auto_generated.data[19]
-data[2][4] => mux_a3e:auto_generated.data[20]
-data[2][5] => mux_a3e:auto_generated.data[21]
-data[2][6] => mux_a3e:auto_generated.data[22]
-data[2][7] => mux_a3e:auto_generated.data[23]
-data[3][0] => mux_a3e:auto_generated.data[24]
-data[3][1] => mux_a3e:auto_generated.data[25]
-data[3][2] => mux_a3e:auto_generated.data[26]
-data[3][3] => mux_a3e:auto_generated.data[27]
-data[3][4] => mux_a3e:auto_generated.data[28]
-data[3][5] => mux_a3e:auto_generated.data[29]
-data[3][6] => mux_a3e:auto_generated.data[30]
-data[3][7] => mux_a3e:auto_generated.data[31]
-sel[0] => mux_a3e:auto_generated.sel[0]
-sel[1] => mux_a3e:auto_generated.sel[1]
+data[0][0] => mux_c3e:auto_generated.data[0]
+data[0][1] => mux_c3e:auto_generated.data[1]
+data[0][2] => mux_c3e:auto_generated.data[2]
+data[0][3] => mux_c3e:auto_generated.data[3]
+data[0][4] => mux_c3e:auto_generated.data[4]
+data[0][5] => mux_c3e:auto_generated.data[5]
+data[0][6] => mux_c3e:auto_generated.data[6]
+data[0][7] => mux_c3e:auto_generated.data[7]
+data[1][0] => mux_c3e:auto_generated.data[8]
+data[1][1] => mux_c3e:auto_generated.data[9]
+data[1][2] => mux_c3e:auto_generated.data[10]
+data[1][3] => mux_c3e:auto_generated.data[11]
+data[1][4] => mux_c3e:auto_generated.data[12]
+data[1][5] => mux_c3e:auto_generated.data[13]
+data[1][6] => mux_c3e:auto_generated.data[14]
+data[1][7] => mux_c3e:auto_generated.data[15]
+data[2][0] => mux_c3e:auto_generated.data[16]
+data[2][1] => mux_c3e:auto_generated.data[17]
+data[2][2] => mux_c3e:auto_generated.data[18]
+data[2][3] => mux_c3e:auto_generated.data[19]
+data[2][4] => mux_c3e:auto_generated.data[20]
+data[2][5] => mux_c3e:auto_generated.data[21]
+data[2][6] => mux_c3e:auto_generated.data[22]
+data[2][7] => mux_c3e:auto_generated.data[23]
+data[3][0] => mux_c3e:auto_generated.data[24]
+data[3][1] => mux_c3e:auto_generated.data[25]
+data[3][2] => mux_c3e:auto_generated.data[26]
+data[3][3] => mux_c3e:auto_generated.data[27]
+data[3][4] => mux_c3e:auto_generated.data[28]
+data[3][5] => mux_c3e:auto_generated.data[29]
+data[3][6] => mux_c3e:auto_generated.data[30]
+data[3][7] => mux_c3e:auto_generated.data[31]
+data[4][0] => mux_c3e:auto_generated.data[32]
+data[4][1] => mux_c3e:auto_generated.data[33]
+data[4][2] => mux_c3e:auto_generated.data[34]
+data[4][3] => mux_c3e:auto_generated.data[35]
+data[4][4] => mux_c3e:auto_generated.data[36]
+data[4][5] => mux_c3e:auto_generated.data[37]
+data[4][6] => mux_c3e:auto_generated.data[38]
+data[4][7] => mux_c3e:auto_generated.data[39]
+sel[0] => mux_c3e:auto_generated.sel[0]
+sel[1] => mux_c3e:auto_generated.sel[1]
+sel[2] => mux_c3e:auto_generated.sel[2]
 clock => ~NO_FANOUT~
 aclr => ~NO_FANOUT~
 clken => ~NO_FANOUT~
-result[0] <= mux_a3e:auto_generated.result[0]
-result[1] <= mux_a3e:auto_generated.result[1]
-result[2] <= mux_a3e:auto_generated.result[2]
-result[3] <= mux_a3e:auto_generated.result[3]
-result[4] <= mux_a3e:auto_generated.result[4]
-result[5] <= mux_a3e:auto_generated.result[5]
-result[6] <= mux_a3e:auto_generated.result[6]
-result[7] <= mux_a3e:auto_generated.result[7]
+result[0] <= mux_c3e:auto_generated.result[0]
+result[1] <= mux_c3e:auto_generated.result[1]
+result[2] <= mux_c3e:auto_generated.result[2]
+result[3] <= mux_c3e:auto_generated.result[3]
+result[4] <= mux_c3e:auto_generated.result[4]
+result[5] <= mux_c3e:auto_generated.result[5]
+result[6] <= mux_c3e:auto_generated.result[6]
+result[7] <= mux_c3e:auto_generated.result[7]
 
 
-|HC11_moc|lpm_mux6:inst2|LPM_MUX:lpm_mux_component|mux_a3e:auto_generated
-result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
-result[1] <= result_node[1].DB_MAX_OUTPUT_PORT_TYPE
-result[2] <= result_node[2].DB_MAX_OUTPUT_PORT_TYPE
-result[3] <= result_node[3].DB_MAX_OUTPUT_PORT_TYPE
-result[4] <= result_node[4].DB_MAX_OUTPUT_PORT_TYPE
-result[5] <= result_node[5].DB_MAX_OUTPUT_PORT_TYPE
-result[6] <= result_node[6].DB_MAX_OUTPUT_PORT_TYPE
-result[7] <= result_node[7].DB_MAX_OUTPUT_PORT_TYPE
+|HC11_moc|lpm_mux6:inst2|LPM_MUX:lpm_mux_component|mux_c3e:auto_generated
+result[0] <= muxlut_result0w.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= muxlut_result1w.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= muxlut_result2w.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= muxlut_result3w.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= muxlut_result4w.DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= muxlut_result5w.DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= muxlut_result6w.DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= muxlut_result7w.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |HC11_moc|lpm_ram_dq0:inst3
@@ -2288,7 +2268,7 @@ wren_a => ram_block1a6.PORTAWE
 wren_a => ram_block1a7.PORTAWE
 
 
-|HC11_moc|lpm_ff7:REG_SP
+|HC11_moc|lpm_ff7:SP_REG
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
 data[1] => lpm_ff:lpm_ff_component.data[1]
@@ -2309,7 +2289,7 @@ q[6] <= lpm_ff:lpm_ff_component.q[6]
 q[7] <= lpm_ff:lpm_ff_component.q[7]
 
 
-|HC11_moc|lpm_ff7:REG_SP|lpm_ff:lpm_ff_component
+|HC11_moc|lpm_ff7:SP_REG|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN
@@ -2355,7 +2335,6 @@ data[0] => lpm_decode:lpm_decode_component.data[0]
 data[1] => lpm_decode:lpm_decode_component.data[1]
 data[2] => lpm_decode:lpm_decode_component.data[2]
 eq0 <= lpm_decode:lpm_decode_component.eq[0]
-eq5 <= lpm_decode:lpm_decode_component.eq[5]
 
 
 |HC11_moc|lpm_decode2:inst4|lpm_decode:lpm_decode_component

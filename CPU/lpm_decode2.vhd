@@ -43,8 +43,7 @@ ENTITY lpm_decode2 IS
 	PORT
 	(
 		data		: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-		eq0		: OUT STD_LOGIC ;
-		eq5		: OUT STD_LOGIC 
+		eq0		: OUT STD_LOGIC 
 	);
 END lpm_decode2;
 
@@ -53,7 +52,6 @@ ARCHITECTURE SYN OF lpm_decode2 IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (7 DOWNTO 0);
 	SIGNAL sub_wire1	: STD_LOGIC ;
-	SIGNAL sub_wire2	: STD_LOGIC ;
 
 
 
@@ -70,10 +68,8 @@ ARCHITECTURE SYN OF lpm_decode2 IS
 	END COMPONENT;
 
 BEGIN
-	sub_wire2    <= sub_wire0(5);
 	sub_wire1    <= sub_wire0(0);
 	eq0    <= sub_wire1;
-	eq5    <= sub_wire2;
 
 	lpm_decode_component : lpm_decode
 	GENERIC MAP (
@@ -106,7 +102,7 @@ END SYN;
 -- Retrieval info: PRIVATE: eq2 NUMERIC "0"
 -- Retrieval info: PRIVATE: eq3 NUMERIC "0"
 -- Retrieval info: PRIVATE: eq4 NUMERIC "0"
--- Retrieval info: PRIVATE: eq5 NUMERIC "1"
+-- Retrieval info: PRIVATE: eq5 NUMERIC "0"
 -- Retrieval info: PRIVATE: eq6 NUMERIC "0"
 -- Retrieval info: PRIVATE: eq7 NUMERIC "0"
 -- Retrieval info: PRIVATE: nBit NUMERIC "3"
@@ -116,10 +112,8 @@ END SYN;
 -- Retrieval info: USED_PORT: @eq 0 0 LPM_DECODES 0 OUTPUT NODEFVAL @eq[LPM_DECODES-1..0]
 -- Retrieval info: USED_PORT: data 0 0 3 0 INPUT NODEFVAL data[2..0]
 -- Retrieval info: USED_PORT: eq0 0 0 0 0 OUTPUT NODEFVAL eq0
--- Retrieval info: USED_PORT: eq5 0 0 0 0 OUTPUT NODEFVAL eq5
 -- Retrieval info: CONNECT: @data 0 0 3 0 data 0 0 3 0
 -- Retrieval info: CONNECT: eq0 0 0 0 0 @eq 0 0 1 0
--- Retrieval info: CONNECT: eq5 0 0 0 0 @eq 0 0 1 5
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_decode2.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_decode2.inc FALSE

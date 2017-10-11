@@ -75,8 +75,8 @@ applicable agreement for further details.
 	(port
 		(pt 128 128)
 		(output)
-		(text "eq6" (rect 0 0 21 14)(font "Arial" (font_size 8)))
-		(text "eq6" (rect 91 122 109 135)(font "Arial" (font_size 8)))
+		(text "eq7" (rect 0 0 21 14)(font "Arial" (font_size 8)))
+		(text "eq7" (rect 91 122 109 135)(font "Arial" (font_size 8)))
 		(line (pt 128 128)(pt 112 128)(line_width 1))
 	)
 	(drawing

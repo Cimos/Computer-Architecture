@@ -23,6 +23,6 @@ component lpm_decode1
 		eq3		: OUT STD_LOGIC ;
 		eq4		: OUT STD_LOGIC ;
 		eq5		: OUT STD_LOGIC ;
-		eq6		: OUT STD_LOGIC 
+		eq7		: OUT STD_LOGIC 
 	);
 end component;
