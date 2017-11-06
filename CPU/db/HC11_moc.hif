@@ -8344,26 +8344,6 @@ ALU:inst|ASR:inst7
 
 # end
 # entity
-ALU
-# storage
-db|HC11_moc.(1).cnf
-db|HC11_moc.(1).cnf
-# case_insensitive
-# source_file
-ALU.bdf
-98ac08c936fb08f41c668f58ab2148
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-ALU:inst
-}
-# macro_sequence
-
-# end
-# entity
 lpm_decode1
 # storage
 db|HC11_moc.(54).cnf
@@ -8912,6 +8892,26 @@ AUTO
 
 # end
 # entity
+ALU
+# storage
+db|HC11_moc.(1).cnf
+db|HC11_moc.(1).cnf
+# case_insensitive
+# source_file
+ALU.bdf
+8b74f79d24299cb955eed501c6c57fa
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+ALU:inst
+}
+# macro_sequence
+
+# end
+# entity
 altsyncram_p771
 # storage
 db|HC11_moc.(108).cnf
@@ -9012,7 +9012,7 @@ address_a0
 }
 # memory_file {
 op_code.mif
-4330d54e16c2c2a4f154754cf18a9a
+cd1d5da6ace3889a15f6e5319c4f9737
 }
 # hierarchies {
 lpm_rom1:OP_code|altsyncram:altsyncram_component|altsyncram_p771:auto_generated

@@ -161,9 +161,6 @@ t_2[4] <= lpm_ff8:inst.q[4]
 t_2[5] <= lpm_ff8:inst.q[5]
 t_2[6] <= lpm_ff8:inst.q[6]
 t_2[7] <= lpm_ff8:inst.q[7]
-ALU_sel1[0] => ~NO_FANOUT~
-ALU_sel1[1] => ~NO_FANOUT~
-ALU_sel1[2] => ~NO_FANOUT~
 
 
 |HC11_moc|ALU:inst|lpm_mux2:inst9

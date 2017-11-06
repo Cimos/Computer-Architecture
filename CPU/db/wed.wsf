@@ -1733,10 +1733,10 @@ VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/HC11_moc.sim.cvw
 VECTOR("C:/Users/Cimos/Desktop/Project/computer-archtecture/CPU/db/HC11_moc.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 1786690;
-		ZEND = 2000000;
+		ZBEGIN = 100341;
+		ZEND = 206995;
 		NUMERATOR = 1250;
-		DENOMINATOR = 213310;
+		DENOMINATOR = 106654;
 		TOP_INDEX = 0;
 	}
 	CLOCK{

@@ -67,9 +67,9 @@ CONTENT BEGIN
 -- **************************** ADDD START ***************************** 
 
 -- ---------------------- WORKING WORKING WORKING WORKIN ----------------------
+-- D = AB, Z = XY
 
-   				   -- wren t ds alu reg   DATA 
-					-- D = AB, Z = XY
+     -- wren t ds alu reg   DATA 				
 
 0 : 01101111111100000000;		-- NOP / INIT
 1 : 00000011101111111110;		-- Data to B  #FE	 0x70FE
